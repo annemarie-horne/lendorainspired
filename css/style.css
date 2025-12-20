@@ -14,22 +14,40 @@
 body {
   background-color: var(--pageBG);
   color: var(--mainTextColor);
+  font-family: var(--mainFontFamily);
 }
 
 
 /* Containers */
-.form-container {
+.form-section {
   margin: 0 auto;
   max-width: 1200px;
   min-width: 600px;
   background-color: var(--sectionBG);
   border-radius: 24px;
   padding: 20px;
+  margin-bottom: 40px;
   box-shadow:
       0 0 0 1px #f3f4f6,
       0 10px 15px -3px rgba(0,0,0,.1),
       0 4px 6px -4px rgba(0,0,0,.1);
 }
+
+/* Sections */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  margin-bottom: 6px;
+}
+
+.section-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6B7280; /* soft gray */
+  margin-bottom: 20px;
+}
+
 
 /* Form */
 .form-grid {
@@ -37,18 +55,12 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 16px 25px;
 }
-.field-container {
-  border: 0px solid blue;
-  width: 100%;
-}
 .field-container.full {
   grid-column: span 2;
 }
 
 label {
   display: block;
-  font-family: var(--mainFontFamily);
-  font-optical-sizing: auto;
   font-weight: 600;
   font-size: 13px;
   margin-bottom: 6px; /* ← breathing room */
@@ -63,3 +75,200 @@ input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=passw
     border-radius: 8px;
     width: 100%;
 }
+
+/* Questions */
+.question-block {
+  padding: 24px 0;
+}
+
+.question-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.question-number {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 20px;
+  color: var(--mainTextColor);
+}
+
+.question-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.question-body {
+  padding-left: 32px; /* aligns with text after number */
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+
+.question-divider {
+  border: none;
+  height: 1px;
+  background-color: #E5E7EB;
+}
+
+
+
+
+/* Toggling */
+/* Toggle base */
+.toggle {
+  position: absolute;
+  opacity: 0;
+}
+
+.option-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.fake-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid #E5E7EB;
+  background: #fff;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* indeterminate = orange minus */
+.toggle:indeterminate + .fake-box {
+  border-color: #F59E0B;
+  background: #FFF7ED;
+}
+
+.toggle:indeterminate + .fake-box::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: #F59E0B;
+}
+
+/* checked = green tick */
+.toggle:checked + .fake-box {
+  border-color: #10B981;
+  background: #ECFDF5;
+}
+
+.toggle:checked + .fake-box::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #10B981;
+  border-bottom: 2px solid #10B981;
+  left: 4px;
+  top: 5px;
+  transform: rotate(-45deg);
+}
+
+/* Input with attachment */
+.field-with-attach {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.field-with-attach .control {
+  padding-right: 60px;
+}
+
+.attach-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  border-radius: 10px;
+  height: 32px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.attach-count {
+  background: #F3F4F6;
+  border-radius: 999px;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Sub questions */
+.sub-questions {
+  display: none;
+  padding-left: 28px;
+}
+
+.question-body.is-expanded .sub-questions {
+  display: block;
+}
+
+.sub-question {
+  padding: 18px 0;
+}
+
+/* line 1: number + text in one row */
+.sub-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-number {
+  min-width: 30px;            /* gives consistent alignment: 2.1, 2.2, 2.3 */
+  font-weight: 600;
+  color: var(--mainTextColor);
+  font-size: 14px;
+}
+
+.sub-text {
+  font-weight: 600;
+  color: var(--mainTextColor);
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* line 2: radios + input on one row */
+.sub-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inline-options {
+  display: flex;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+/* input takes remaining width */
+.sub-controls .field-with-attach {
+  flex: 1;
+  position: relative;
+}
+
