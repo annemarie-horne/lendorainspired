@@ -1,0 +1,65 @@
+:root {
+  --pageBG: #FFFFF9;
+  --sectionBG: #ffffff;
+  --mainTextColor: #374151;
+  --mainFontFamily: "Inter", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Page */
+body {
+  background-color: var(--pageBG);
+  color: var(--mainTextColor);
+}
+
+
+/* Containers */
+.form-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 600px;
+  background-color: var(--sectionBG);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow:
+      0 0 0 1px #f3f4f6,
+      0 10px 15px -3px rgba(0,0,0,.1),
+      0 4px 6px -4px rgba(0,0,0,.1);
+}
+
+/* Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 25px;
+}
+.field-container {
+  border: 0px solid blue;
+  width: 100%;
+}
+.field-container.full {
+  grid-column: span 2;
+}
+
+label {
+  display: block;
+  font-family: var(--mainFontFamily);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px; /* ← breathing room */
+}
+
+
+input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=password], input[type=search], textarea, select {
+    border: 1px solid #E5E7EB;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
