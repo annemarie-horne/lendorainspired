@@ -13,252 +13,1173 @@
 
 </head>
 <body>
-
-<section class="form-section">
-
-  <div class="section-title">
-    Conveyancer Verification
-  </div>
-  <div class="section-description">
-    Tell us who you are and provide the key information about the property being offered.
-  </div>
-
-  <div class="form-grid">
-
-    <div class="field-container">
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" />
-    </div>
-
-    <div class="field-container">
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" />
-    </div>
-
-    <div class="field-container">
-      <label for="eMail">Email</label>
-      <input type="email" id="eMail" />
-    </div>
-
-    <div class="field-container">
-      <label for="cellPhone">Cell Phone</label>
-      <input type="text" id="cellPhone" />
-    </div>
-
-    <div class="field-container full">
-      <label for="street">Address</label>
-      <input type="text" id="street" />
-    </div>
-
-  </div>
-
-</section>
+  <div class="form-section form-section-outter">
+    <div class="form-body-container">
 
 
-<div class="form-section">
+      <div class="form-section"><!-- form-section 1-->
 
-  <div class="section-title">
-    Requirements Section
-  </div>
-  <div class="section-description">
-    Here are some requirements you need to proceed.
-  </div>
-  
-  <!-- Question 1 -->
-  <div class="question-block">
-    <div class="question-header">
-      <div class="question-number">1</div>
-      <div class="question-text">Just a text field</div>
-    </div>
+        <div class="section-title">
+          Section 1
+        </div>
+        <div class="section-description">
+          Demonstrating a regular form with no numbering.
+        </div>
 
-    <div class="question-body">
-      <div class="field-with-attach">
-        <input class="control" type="text" placeholder="">
-      </div>
-    </div>
-  </div>
+        <div class="form-grid">
 
-  <hr class="question-divider">
-
-  <!-- Question 2 -->
-  <div class="question-block">
-    <div class="question-header">
-      <div class="question-number">2</div>
-      <div class="question-text">Attach something here</div>
-    </div>
-
-    <div class="question-body">
-      <div class="field-with-attach">
-        <input class="control" type="text" placeholder="Any document showing your full name and address">
-        <button type="button" class="attach-btn">
-          <span class="clip">📎</span>
-          <span class="attach-count">0</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <hr class="question-divider">
-
-  <!-- Question 3 -->
-  <div class="question-block">
-    <div class="question-header">
-      <div class="question-number">3</div>
-      <div class="question-text">Choose one option from the list.</div>
-    </div>
-
-    <div class="question-body">
-      <label class="option">
-        <input type="radio" name="ownership" value="personal">
-        Choose Option 1
-      </label>
-
-      <label class="option">
-        <input type="radio" name="ownership" value="company">
-        Another Option 2
-      </label>
-
-      <label class="option">
-        <input type="radio" name="ownership" value="trust">
-        How about Option 3
-      </label>
-
-      <label class="option">
-        <input type="radio" name="ownership" value="trust">
-        There's even option 4
-      </label>
-    </div>
-  </div>
-
-  <hr class="question-divider">
-
-
-
-
-
-  <!-- Question 4 -->
-  <div class="question-block">
-    <div class="question-header">
-      <div class="question-number">4</div>
-      <div class="question-text">Yes or No? Add text and attach proof!</div>
-    </div>
-
-    <div class="question-body">
-       
-      <div class="sub-controls">
-            <div class="inline-options">
-              <label class="option">
-                <input type="radio" name="q21"> Yes
-              </label>
-              <label class="option">
-                <input type="radio" name="q21"> No
-              </label>
-            </div>
-
-            <div class="field-with-attach">
-              <input class="control" type="text" placeholder="Provide details">
-              <button type="button" class="attach-btn">
-                <span class="clip">📎</span>
-                <span class="attach-count">0</span>
-              </button>
-            </div>
+          <div class="field-container">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" />
           </div>
 
-
-    </div>
-  </div>
-
-  <hr class="question-divider">
-
-
-  
-
-  <!-- Question 10 -->
-  <div class="question-block">
-    <div class="question-header">
-      <div class="question-number">10</div>
-      <div class="question-text">Run a credit check</div>
-    </div>
-
-    <div class="question-body">
-      <label class="option option-toggle">
-        <input type="checkbox" class="toggle" id="mortgageToggle">
-        <span class="fake-box" aria-hidden="true"></span>
-        <span>Yes, there is an existing mortgage</span>
-      </label>
-
-      <div class="field-with-attach">
-        <input class="control" type="text" placeholder="Short description (optional)">
-        <button type="button" class="attach-btn">
-          <span class="clip">📎</span>
-          <span class="attach-count">0</span>
-        </button>
-      </div>
-
-      <!-- Sub questions -->
-      <div class="sub-questions">
-
-        <hr class="question-divider">
-
-        <div class="sub-question">
-
-          <div class="sub-header">
-            <span class="sub-number">10.1</span>
-            <span class="sub-text">Has a credit check already been run?</span>
+          <div class="field-container">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" />
           </div>
 
-          <div class="sub-controls">
-            <div class="inline-options">
-              <label class="option">
-                <input type="radio" name="q21"> Yes
-              </label>
-              <label class="option">
-                <input type="radio" name="q21"> No
-              </label>
-            </div>
+          <div class="field-container">
+            <label for="eMail">Email</label>
+            <input type="email" id="eMail" />
+          </div>
 
-            <div class="field-with-attach">
-              <input class="control" type="text" placeholder="Provide details">
-              <button type="button" class="attach-btn">
-                <span class="clip">📎</span>
-                <span class="attach-count">0</span>
-              </button>
-            </div>
+          <div class="field-container">
+            <label for="cellPhone">Cell Phone</label>
+            <input type="text" id="cellPhone" />
+          </div>
+
+          <div class="field-container full">
+            <label for="street">Address</label>
+            <input type="text" id="street" />
           </div>
 
         </div>
 
-        <hr class="question-divider">
+        <br/>
+        <button type="submit" class="btn-pill">
+          Submit Application
+        </button>
 
-        <div class="sub-question">
+      </div> <!-- / form-section 1-->
 
-          <div class="sub-header">
-            <span class="sub-number">10.2</span>
-            <span class="sub-text">Attach the report.</span>
+
+      <div class="form-section"><!-- form-section 2-->
+
+        <div class="section-title">
+          Section 2
+        </div>
+        <div class="section-description">
+          In this section we'll demonstrate the basic field options.
+        </div>         
+
+        <!-- Question 1 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">1</div>
+            <div class="question-text">Text Only.</div>
           </div>
 
-          <div class="sub-controls">
+          <div class="question-body">
             <div class="field-with-attach">
-              <input class="control" type="text" placeholder="Outstanding amount">
-              <button type="button" class="attach-btn">
-                <span class="clip">📎</span>
-                <span class="attach-count">0</span>
-              </button>
+              <input class="control" type="text" placeholder="">
+            </div>
+          </div>
+        </div><!-- / Question 1 -->
+
+
+
+        <hr class="question-divider">
+
+
+        <!-- Question 2 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">2</div>
+            <div class="question-text">Text with Attachment.</div>
+          </div>
+
+          <div class="field-attach-row">
+            <input class="control" type="text" placeholder="Example placeholder text">
+            <button type="button" class="attach-btn-outside" aria-label="Attach file">
+              <span class="clip" aria-hidden="true">📎</span>
+              <span class="attach-count">0</span>
+            </button>
+          </div>
+
+        </div><!-- / Question 2 -->
+
+
+        <hr class="question-divider">
+
+
+        <!-- Question 3 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">3</div>
+            <div class="question-text">Yes and No Only.</div>
+          </div>
+
+          <div class="question-body">
+            <div class="sub-controls">
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+              </div>
             </div>
           </div>
 
+        </div><!-- Question 3 -->
+
+
+        <hr class="question-divider">
+
+
+        <!-- Question 4 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">4</div>
+            <div class="question-text">Yes, No and Maybe. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="sub-controls">
+                  
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="maybe">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Maybe</span>
+                </label>
+              </div>
+
+              <div class="field-attach-row">
+                <input class="control" type="text" placeholder="Any document showing your full name and address">
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </div><!-- Question 4 -->
+
+
+
+        <hr class="question-divider">
+
+
+        
+
+        <!-- Question 5 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">5</div>
+            <div class="question-text">Yes, No and Maybe. With Text. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="sub-controls">
+                  
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="maybe">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Maybe</span>
+                </label>
+              </div>
+
+              <div class="field-attach-row">
+                <input class="control" type="text" placeholder="Any document showing your full name and address">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </div><!-- Question 5 -->
+
+
+
+        <hr class="question-divider">
+
+
+
+        <!-- Question 6 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">6</div>
+            <div class="question-text">Radio Button Options Only.</div>
+          </div>
+
+          <div class="question-body">
+
+            
+            <div class="radio-pills radio-pills--stack">
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval1">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 1</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval2">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 2 with extra text.</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval3">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 3 with more extra text over here.</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval4">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 4 extra super long text that can fill a long radio button here.</span>
+              </label>
+            </div>
+
+
+
+          </div>
+        </div><!-- Question 6 -->
+
+
+
+        <hr class="question-divider">
+
+
+
+        <!-- Question 7 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">7</div>
+            <div class="question-text">Number Field Only.</div>
+          </div>
+
+          <div class="question-body">
+            <div class="field-with-attach">
+              <input class="control" type="number" placeholder="">
+            </div>
+          </div>
+        </div><!-- / Question 7 -->
+
+
+        <hr class="question-divider">
+
+
+        <!-- Question 8 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">8</div>
+            <div class="question-text">Number Field. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-attach-row">
+              <input class="control" type="number" placeholder="0 - 100">
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 8 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 9 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">9</div>
+            <div class="question-text">Date Field Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <input type="date" class="control date-input date-input--compact" />
+            
+          </div>
+
+        </div><!-- / Question 9 -->
+
+        
+        <hr class="question-divider">
+
+
+
+        <!-- Question 10 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">10</div>
+            <div class="question-text">Date Field. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              <input type="date" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+            </div>
+
+          </div>
+
+        </div><!-- / Question 10 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 11 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">11</div>
+            <div class="question-text">Date Field. With Text. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              <input type="date" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 11 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 12 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">12</div>
+            <div class="question-text">Start and End Date Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From :<input type="date" class="control date-input date-input--compact" />
+              To: <input type="date" class="control date-input date-input--compact" />
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 12 -->
+
+        
+        <hr class="question-divider">
+
+        <!-- Question 13 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">13</div>
+            <div class="question-text">Start and End Date. With Text</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From: <input type="date" class="control date-input date-input--compact" />
+              To: <input type="date" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 13 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 14 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">14</div>
+            <div class="question-text">Start and End Date. With Text. With Upload.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From: <input type="date" class="control date-input date-input--compact" />
+              To: <input type="date" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 14 -->
+
+        
+
+        <hr class="question-divider">
+
+
+
+        <!-- Question 15 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">15</div>
+            <div class="question-text">DateTime Field Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <input type="datetime-local" class="control date-input date-input--compact" />
+            
+          </div>
+
+        </div><!-- / Question 15 -->
+
+        
+        <hr class="question-divider">
+
+
+
+        <!-- Question 16 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">16</div>
+            <div class="question-text">DateTime Field. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              <input type="datetime-local" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+            </div>
+
+          </div>
+
+        </div><!-- / Question 16 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 17 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">17</div>
+            <div class="question-text">DateTime Field. With Text. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              <input type="datetime-local" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 17 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 18 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">18</div>
+            <div class="question-text">Start and End Datetime Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From :<input type="datetime-local" class="control date-input date-input--compact" />
+              To: <input type="datetime-local" class="control date-input date-input--compact" />
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 18 -->
+
+        
+        <hr class="question-divider">
+
+        <!-- Question 19 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">19</div>
+            <div class="question-text">Start and End DateTime. With Text</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From: <input type="datetime-local" class="control date-input date-input--compact" />
+              To: <input type="datetime-local" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 19 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 20 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">20</div>
+            <div class="question-text">Start and End DateTime. With Text. With Upload.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From: <input type="datetime-local" class="control date-input date-input--compact" />
+              To: <input type="datetime-local" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 20 -->
+
+        
+        <hr class="question-divider">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Question 21 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">21</div>
+            <div class="question-text">Time Field Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <input type="time" class="control date-input date-input--compact" />
+            
+          </div>
+
+        </div><!-- / Question 21 -->
+
+        
+        <hr class="question-divider">
+
+
+
+        <!-- Question 22 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">22</div>
+            <div class="question-text">Time Field. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              <input type="time" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+            </div>
+
+          </div>
+
+        </div><!-- / Question 22 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 23 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">23</div>
+            <div class="question-text">Time Field. With Text. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              <input type="time" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 23 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 24 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">24</div>
+            <div class="question-text">Start and End Time Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From :<input type="time" class="control date-input date-input--compact" />
+              To: <input type="time" class="control date-input date-input--compact" />
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 24 -->
+
+        
+        <hr class="question-divider">
+
+        <!-- Question 25 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">25</div>
+            <div class="question-text">Start and End Time. With Text</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From: <input type="time" class="control date-input date-input--compact" />
+              To: <input type="time" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 25 -->
+
+        
+        <hr class="question-divider">
+
+
+        <!-- Question 26 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">26</div>
+            <div class="question-text">Start and End Time. With Text. With Upload.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="date-text-row">
+              From: <input type="time" class="control date-input date-input--compact" />
+              To: <input type="time" class="control date-input date-input--compact" />
+              <input type="text" class="control" placeholder="Add note or description" />
+              <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 26 -->
+
+        
+        <hr class="question-divider">
+
+
+
+        <!-- Question 27 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">27</div>
+            <div class="question-text">Checkbox with Text. Single.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full">
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">I confirm the information above is correct.</span>
+              </label>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 27 -->
+
+        
+        <hr class="question-divider">
+
+
+
+        <!-- Question 28 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">28</div>
+            <div class="question-text">Checkbox with Text. Multiple.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full">
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 1.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 2 with extra text.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 3 with more extra text over here.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 4 extra super long text that can fill a long checkbox here.</span>
+              </label>
+            </div>
+            
+          </div>
+
+        </div><!-- / Question 28 -->
+
+        
+        <hr class="question-divider">
+
+
+
+        <!-- Question 29 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">29</div>
+            <div class="question-text">Textarea Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <textarea rows="6"></textarea>
+            
+          </div>
+
+        </div><!-- / Question 29 -->
+
+        
+        <hr class="question-divider">
+
+
+        
+         <!-- Question 30 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">30</div>
+            <div class="question-text">Address Only.</div>
+          </div>
+
+          <div class="question-body">
+            
+
+            <div class="form-grid">
+
+              <div class="field-container full">
+                <label for="street">Street</label>
+                <input type="text" id="street" />
+              </div>
+
+              <div class="field-container">
+                <label for="city">City</label>
+                <input type="text" id="city" />
+              </div>
+
+              <div class="field-container">
+                <label for="state">State</label>
+                <input type="text" id="state" />
+              </div>
+
+              <div class="field-container">
+                <label for="country">Country</label>
+                <input type="text" id="country" />
+              </div>
+
+              <div class="field-container">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" />
+              </div>
+
+              
+
+
+            </div>
+            
+            
+          </div>
+
+        </div><!-- / Question 30 -->
+
+
+
+      </div> <!-- /form-section section 2-->
+
+
+
+      <div class="form-section"><!-- form-section section 3-->
+
+        <div class="section-title">
+          Section 3
         </div>
+        <div class="section-description">
+          Demonstrating a section with sub and sub-sub sections.
+        </div>
+        
+
+        <!-- Question 31 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">31</div>
+            <div class="question-text">Question with regular sub sections.</div>
+          </div>
+
+          <div class="question-body">
+            
+
+            <label class="check-row">
+              <input type="checkbox" class="check-row__input js-indeterminate-toggle">
+              <span class="check-row__box" aria-hidden="true"></span>
+              <span class="check-row__text">Click me to expand the sub questions.</span>
+            </label>
+
+            <!-- Sub questions -->
+            <div class="sub-questions">
+
+              
+              <div class="sub-question"><!-- Question 31.1 -->
+                <div class="sub-header">
+                  <span class="sub-number">31.1</span>
+                  <span class="sub-text">Text Only</span>
+                </div>
+                <div class="sub-controls">
+                  <div class="field-with-attach">
+                    <input class="control" type="text" placeholder="Outstanding amount">
+                  </div>
+                </div>
+              </div><!-- /Question 31.1 -->
+              
+
+              <hr class="question-divider">
+
+              <div class="sub-question"><!-- Question 31.2 -->
+                <div class="sub-header">
+                  <span class="sub-number">31.2</span>
+                  <span class="sub-text">Yes, No and Maybe. With Text.</span>
+                </div>
+                <div class="sub-controls">
+                  
+                  <div class="radio-pills">
+                    <label class="radio-pill">
+                      <input type="radio" name="radiopill1" value="yes">
+                      <span class="pill-dot" aria-hidden="true"></span>
+                      <span class="pill-text">Yes</span>
+                    </label>
+
+                    <label class="radio-pill">
+                      <input type="radio" name="radiopill1" value="no">
+                      <span class="pill-dot" aria-hidden="true"></span>
+                      <span class="pill-text">No</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="radiopill1" value="maybe">
+                      <span class="pill-dot" aria-hidden="true"></span>
+                      <span class="pill-text">Maybe</span>
+                    </label>
+                  </div>
+
+                  <div class="field-attach-row">
+                    <input class="control" type="text" placeholder="Any document showing your full name and address">
+                  </div>
+                  
+                </div>
+              </div><!-- /Question 31.2 -->
+
+              <hr class="question-divider">
 
 
 
-      </div>
+              <div class="sub-question"><!-- Question 31.3 -->
+                <div class="sub-header">
+                  <span class="sub-number">31.3</span>
+                  <span class="sub-text">Choose more than one option.</span>
+                </div>
+                <div class="sub-controls">
+                  
+                  
+                  <div class="field-container full">
+                    <label class="check-row">
+                      <input type="checkbox" class="check-row__input">
+                      <span class="check-row__box" aria-hidden="true"></span>
+                      <span class="check-row__text">Option 1.</span>
+                    </label>
+                    <label class="check-row">
+                      <input type="checkbox" class="check-row__input">
+                      <span class="check-row__box" aria-hidden="true"></span>
+                      <span class="check-row__text">Option 2 with extra text.</span>
+                    </label>
+                    <label class="check-row">
+                      <input type="checkbox" class="check-row__input">
+                      <span class="check-row__box" aria-hidden="true"></span>
+                      <span class="check-row__text">Option 3 with more extra text over here.</span>
+                    </label>
+                    <label class="check-row">
+                      <input type="checkbox" class="check-row__input">
+                      <span class="check-row__box" aria-hidden="true"></span>
+                      <span class="check-row__text">Option 4 extra super long text that can fill a long checkbox here.</span>
+                    </label>
+                  </div>
+                  
+                </div>
+              </div><!-- /Question 31.3 -->  
 
-    </div>
-  </div>
 
-</div>  <!-- closes the second .form-section -->
 
+            </div>
+
+          </div>
+        </div><!-- /Question 31 -->
+
+
+
+
+        <!-- Question 32 -->
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">32</div>
+            <div class="question-text">Question with regular sub sections expanding to sub-sub sections.</div>
+          </div>
+
+          <div class="question-body">
+            
+
+            <label class="check-row">
+              <input type="checkbox" class="check-row__input js-indeterminate-toggle">
+              <span class="check-row__box" aria-hidden="true"></span>
+              <span class="check-row__text">Click me to expand the sub questions.</span>
+            </label>
+
+            <!-- Sub questions -->
+            <div class="sub-questions">
+              
+              <div class="sub-question"><!-- Question 32.1 -->
+                <div class="sub-header">
+                  <span class="sub-number">32.1</span>
+                  <span class="sub-text">Select the date and time over here.</span>
+                </div>
+                <div class="sub-controls">
+                  <div class="question-body">
+            
+                    <input type="datetime-local" class="control date-input date-input--compact" />
+                    
+                  </div>
+                </div>
+              </div><!-- /Question 32.1 -->
+              
+              <hr class="question-divider">
+
+            </div><!-- /Sub questions -->
+
+
+
+
+
+            <!-- Sub questions -->
+            <div class="sub-questions sub-purple">
+              
+              <div class="sub-question"><!-- Question 32.1.1 -->
+                <div class="sub-header">
+                  <span class="sub-number">32.1.1</span>
+                  <span class="sub-text">Select the date and time over here.</span>
+                </div>
+                <div class="sub-controls">
+                  <div class="question-body">
+            
+                    <input type="datetime-local" class="control date-input date-input--compact" />
+                    
+                  </div>
+                </div>
+              </div><!-- /Question 32.1.1 -->
+              
+              <hr class="question-divider">
+
+              <div class="sub-question"><!-- Question 32.1.2 -->
+                <div class="sub-header">
+                  <span class="sub-number">32.1.2</span>
+                  <span class="sub-text">Text Only.</span>
+                </div>
+                <div class="sub-controls">
+                  <div class="question-body">
+            
+                    <input class="control" type="text" placeholder="Example placeholder text">
+                    
+                  </div>
+                </div>
+              </div><!-- /Question 32.1.2 -->
+
+
+
+            </div><!-- /Sub questions -->
+
+
+
+
+            <!-- Sub questions -->
+            <div class="sub-questions">
+              
+              <div class="sub-question"><!-- Question 32.1 -->
+                <div class="sub-header">
+                  <span class="sub-number">32.2</span>
+                  <span class="sub-text">Address Only.</span>
+                </div>
+                <div class="sub-controls">
+                  <div class="question-body">
+            
+                    <div class="form-grid">
+
+                      <div class="field-container full">
+                        <label for="street">Street</label>
+                        <input type="text" id="street" />
+                      </div>
+
+                      <div class="field-container">
+                        <label for="city">City</label>
+                        <input type="text" id="city" />
+                      </div>
+
+                      <div class="field-container">
+                        <label for="state">State</label>
+                        <input type="text" id="state" />
+                      </div>
+
+                      <div class="field-container">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" />
+                      </div>
+
+                      <div class="field-container">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" id="zip" />
+                      </div>
+
+                      
+
+
+                    </div>
+                    
+                  </div>
+                </div>
+              </div><!-- /Question 32.1 -->
+              
+              <hr class="question-divider">
+
+            </div><!-- /Sub questions -->
+
+
+            
+          </div>
+        </div><!-- /Question 32 -->
+
+
+
+
+
+
+
+
+
+
+      </div>  <!-- /form-section section 3-->
+
+
+    </div> <!-- /form-body-container -->
+  </div> <!-- /form-section form-section-outter -->
 <script src="./js/script.js"></script>
-
 </body>
 </html>

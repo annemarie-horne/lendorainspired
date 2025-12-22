@@ -1,8 +1,32 @@
+/*
+INDEX
+1. MAIN AND GENERAL
+2. CONTAINERS AND SECTIONS
+3. FORMS
+9. SUB SECTION AND TOGGLE
+10. RADIO BUTTON STYLE
+11. CHECKBOX STYLE
+12. BUTTON STYLE
+*/
+
+div {
+  /* border: 1px solid green; */
+}
+
+/********** 1. MAIN AND GENERAL START **********/
 :root {
-  --pageBG: #FFFFF9;
+  --pageBG: #e5e7eb;
   --sectionBG: #ffffff;
+  --canvasGray: #fafaf9;
   --mainTextColor: #374151;
   --mainFontFamily: "Inter", sans-serif;
+  --formGrey: #3b3b3b;
+  --formBlue: #99C8FF;
+  --formLightBlue: #E9F0FE;
+  --brightOrange: #FF7A59;
+
+  --formPurpleBorder: #B8A7E6;
+  --formPurpleSoft: #F1EEFB;
 }
 *,
 *::before,
@@ -16,13 +40,18 @@ body {
   color: var(--mainTextColor);
   font-family: var(--mainFontFamily);
 }
+/********** 1. MAIN AND GENERAL END **********/
 
 
+/********** 2. CONTAINERS AND SECTIONS START **********/
 /* Containers */
-.form-section {
+.form-body-container {
+  background-color: #fafaf9;
   margin: 0 auto;
-  max-width: 1200px;
-  min-width: 600px;
+  padding: 20px;
+  border-radius: 30px;
+}
+.form-section {
   background-color: var(--sectionBG);
   border-radius: 24px;
   padding: 20px;
@@ -31,6 +60,9 @@ body {
       0 0 0 1px #f3f4f6,
       0 10px 15px -3px rgba(0,0,0,.1),
       0 4px 6px -4px rgba(0,0,0,.1);
+}
+.form-section-outter {
+  margin: 25px;
 }
 
 /* Sections */
@@ -47,8 +79,9 @@ body {
   color: #6B7280; /* soft gray */
   margin-bottom: 20px;
 }
+/********** 2. CONTAINERS AND SECTIONS END **********/
 
-
+/********** 3. FORMS START **********/
 /* Form */
 .form-grid {
   display: grid;
@@ -67,13 +100,27 @@ label {
 }
 
 
-input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=password], input[type=search], textarea, select {
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
     border: 1px solid #E5E7EB;
     font-size: 14px;
-    line-height: 20px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     width: 100%;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+/* hover */
+input:not([type="checkbox"]):not([type="radio"]):hover,
+textarea:hover,
+select:hover {
+  border-color: var(--brightOrange);
+}
+/* focus (stronger than hover) */
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus,
+select:focus {
+  border-color: var(--brightOrange);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
 }
 
 /* Questions */
@@ -102,7 +149,8 @@ input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=passw
 }
 
 .question-body {
-  padding-left: 32px; /* aligns with text after number */
+  /* padding-left: 32px; */
+  /* aligns with text after number */
 }
 
 .option {
@@ -115,16 +163,51 @@ input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=passw
   font-weight: 400;
 }
 
+.date-input--compact{
+  width: auto;
+  min-width: 140px;     /* enough for YYYY-MM-DD */
+  max-width: 180px;     /* prevents it getting silly */
+  padding: 12px 14px;
+}
+
+/* row layout */
+.date-text-row{
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+/* compact date */
+.date-input--compact{
+  flex: 0 0 auto;
+  min-width: 140px;     /* fits YYYY-MM-DD comfortably */
+  max-width: 180px;
+}
+
+/* text field fills remaining space */
+.date-text-row .control:not(.date-input--compact){
+  flex: 1 1 auto;
+  min-width: 0;         /* critical in flex layouts */
+}
+
+/* keep date styling consistent */
+.date-input{
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 
 .question-divider {
   border: none;
   height: 1px;
   background-color: #E5E7EB;
 }
+/********** 3. FORMS END **********/
 
 
-
-
+/********** 9. SUB SECTION AND TOGGLE START **********/
 /* Toggling */
 /* Toggle base */
 .toggle {
@@ -140,87 +223,71 @@ input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=passw
   cursor: pointer;
 }
 
-.fake-box {
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
-  border: 2px solid #E5E7EB;
-  background: #fff;
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* indeterminate = orange minus */
-.toggle:indeterminate + .fake-box {
-  border-color: #F59E0B;
-  background: #FFF7ED;
-}
-
-.toggle:indeterminate + .fake-box::after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  right: 3px;
-  top: 50%;
-  height: 2px;
-  transform: translateY(-50%);
-  background: #F59E0B;
-}
-
-/* checked = green tick */
-.toggle:checked + .fake-box {
-  border-color: #10B981;
-  background: #ECFDF5;
-}
-
-.toggle:checked + .fake-box::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 4px;
-  border-left: 2px solid #10B981;
-  border-bottom: 2px solid #10B981;
-  left: 4px;
-  top: 5px;
-  transform: rotate(-45deg);
-}
-
 /* Input with attachment */
-.field-with-attach {
-  position: relative;
-  margin-bottom: 12px;
-}
-
-.field-with-attach .control {
-  padding-right: 60px;
-}
-
-.attach-btn {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 1px solid #E5E7EB;
-  background: #fff;
-  border-radius: 10px;
-  height: 32px;
-  padding: 0 10px;
+.field-attach-row{
   display: flex;
-  align-items: center;
-  gap: 6px;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
 }
 
-.attach-count {
-  background: #F3F4F6;
+.field-attach-row .control{
+  flex: 1 1 auto;
+  min-width: 0;   /* super important in flex layouts */
+}
+
+/* outside button (bigger tap target) */
+.attach-btn-outside{
+  height: 44px;             /* iPad friendly */
+  min-width: 64px;          /* comfy tap */
+  padding: 0 12px;
+
+  border: 1px solid #E5E7EB;
+  background: var(--canvasGray);
+  border-radius: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  flex: 0 0 auto;
+}
+
+.attach-btn-outside:hover{
+  border-color: var(--brightOrange);
+}
+
+.attach-btn-outside:active{
+  transform: translateY(1px);
+}
+
+.attach-count{
+  background: var(--formLightBlue);
   border-radius: 999px;
-  padding: 2px 6px;
+  padding: 2px 8px;
   font-size: 12px;
 }
+
 
 /* Sub questions */
 .sub-questions {
   display: none;
-  padding-left: 28px;
+  padding-left: 30px;
+  border-left: 2px solid var(--formBlue);
+  margin-left: 0px;
+  background-color: var(--formLightBlue);
+  margin-top: 2px;
+}
+
+.sub-purple {
+  padding-left: 60px;
+  border-left: 2px solid var(--formPurpleBorder);
+  background-color: var(--formPurpleSoft);
+  margin-top: -6px;
+  margin-left: 10px;
 }
 
 .question-body.is-expanded .sub-questions {
@@ -272,3 +339,260 @@ input:not([type=checkbox]):not([type=radio]), input[type=text], input[type=passw
   position: relative;
 }
 
+/* Let inputs/rows inside sub-controls grow to fill remaining space */
+.sub-controls > .field-attach-row,
+.sub-controls > .field-with-attach,
+.sub-controls > .question-body,
+.sub-controls > .form-grid,
+.sub-controls > .date-text-row {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+/********** 9. SUB SECTION AND TOGGLE START **********/
+
+
+
+
+/********** 10. RADIO BUTTON STYLE START **********/
+.radio-pills {
+  display: inline-flex;
+  gap: 12px;
+  align-items: flex-start; /* top align pills */
+}
+
+.radio-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: border-color 0.15s ease;
+}
+
+.radio-pill:hover {
+  border-color: var(--brightOrange);
+}
+
+.radio-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill-text {
+  font-family: var(--mainFontFamily);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+/* base radio dot */
+.pill-dot {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #D1D5DB;     /* thin grey border */
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+/* inner dot (always present) */
+.pill-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  background: #111827;          /* black center dot */
+}
+
+/* selected state */
+.radio-pill:has(input:checked) .pill-dot {
+  background: #99c8ff;          /* light blue fill */
+  border-color: #111827;        /* black border */
+}
+
+/* blue outer ring */
+.radio-pill:has(input:checked) .pill-dot::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid #99c8ff;    /* soft blue ring */
+}
+
+.radio-pill:has(input:checked) .pill-dot::after {
+  inset: 8px;
+}
+
+/* accessibility focus */
+.radio-pill:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.35);
+}
+
+.radio-pills--stack {
+  flex-direction: column;
+  align-items: flex-start; /* pills size to content */
+  gap: 10px;
+}
+
+
+/********** 10. RADIO BUTTON STYLE START **********/
+
+
+/********** 11. CHECKBOX STYLE START **********/
+/* iPad-friendly checkbox row */
+.check-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;         /* tap target */
+  padding: 10px 0px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check-row:hover{
+  background: #F9FAFB;
+}
+
+/* hide real checkbox but keep accessible */
+.check-row__input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* custom box */
+.check-row__box{
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  background: var(--formGrey);
+  flex-shrink: 0;
+  position: relative;
+
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+/* tick */
+.check-row__box::after{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  left: 4px;
+  top: 6px;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transform: rotate(-50deg);
+  transition: border-color 0.15s ease;
+}
+
+/* checked state */
+.check-row__input:checked + .check-row__box{
+  border-color: var(--formBlue);
+  background: var(--formLightBlue);
+}
+
+.check-row__input:checked + .check-row__box::after{
+  border-left-color: var(--formGrey);
+  border-bottom-color: var(--formGrey);
+}
+
+/* keyboard focus */
+.check-row__input:focus-visible + .check-row__box{
+  outline: 3px solid rgba(16,185,129,0.25);
+  outline-offset: 2px;
+}
+
+.check-row__text{
+  font-size: 14px;
+  color: var(--mainTextColor);
+  font-weight: 400;
+}
+
+/* indeterminate state (orange with a dash) */
+.check-row__input:indeterminate + .check-row__box{
+  border-color: var(--brightOrange);
+  background: rgba(255, 122, 89, 0.14);
+}
+
+.check-row__input:indeterminate + .check-row__box::after{
+  /* turn the tick pseudo-element into a dash */
+  width: 16px;
+  height: 0;
+  left: 6px;
+  top: 12px;
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 3px solid var(--brightOrange);
+  transform: none;
+}
+
+/********** 11. CHECKBOX STYLE END **********/
+
+
+/********** 12. BUTTON STYLE START **********/
+.btn-pill{
+  display: inline-flex;        /* critical */
+  align-items: center;
+  justify-content: center;
+
+  width: auto;                 /* prevent stretching */
+  min-width: 0;                /* just in case */
+  white-space: nowrap;         /* keep text on one line */
+
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  border: 1px solid #FF7A59;
+  background: #FF7A59;
+  color: #ffffff;
+
+  font-family: var(--mainFontFamily);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-pill:hover{
+  filter: brightness(0.97);
+  box-shadow: 0 10px 18px -10px rgba(0,0,0,0.35);
+}
+
+.btn-pill:active{
+  transform: translateY(1px);
+  box-shadow: 0 6px 12px -10px rgba(0,0,0,0.35);
+}
+
+.btn-pill:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 122, 89, 0.28), 0 10px 18px -10px rgba(0,0,0,0.35);
+}
+
+.btn-pill:disabled{
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/********** 12. BUTTON STYLE END **********/

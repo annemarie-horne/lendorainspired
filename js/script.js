@@ -1,29 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("mortgageToggle");
-  if (!toggle) return;
+  const toggles = document.querySelectorAll(".js-indeterminate-toggle");
 
-  const body = toggle.closest(".question-body");
-  if (!body) return;
+  toggles.forEach(toggle => {
+    const body = toggle.closest(".question-body");
+    if (!body) return;
 
-  // initial state: orange minus
-  toggle.indeterminate = true;
-  toggle.checked = false;
-  body.classList.remove("is-expanded");
+    // initial state: orange dash, collapsed
+    toggle.indeterminate = true;
+    toggle.checked = false;
+    body.classList.remove("is-expanded");
 
-  // first click: indeterminate -> checked (green) + expand
-  toggle.addEventListener("click", (e) => {
-    if (toggle.indeterminate) {
+    // first click: indeterminate → checked
+    toggle.addEventListener("click", (e) => {
+      if (toggle.indeterminate) {
+        e.preventDefault();          // stop native toggle
+        toggle.indeterminate = false;
+        toggle.checked = true;
+        body.classList.add("is-expanded");
+      }
+    });
+
+    // subsequent clicks: normal toggle
+    toggle.addEventListener("change", () => {
       toggle.indeterminate = false;
-      toggle.checked = true;
-      body.classList.add("is-expanded");
-      e.preventDefault(); // only on the first click
-    }
-  });
-
-  // after that: normal toggle, keep UI in sync
-  toggle.addEventListener("change", () => {
-    // indeterminate should never come back after first interaction
-    toggle.indeterminate = false;
-    body.classList.toggle("is-expanded", toggle.checked);
+      body.classList.toggle("is-expanded", toggle.checked);
+    });
   });
 });
