@@ -3,7 +3,9 @@ INDEX
 1. MAIN AND GENERAL
 2. CONTAINERS AND SECTIONS
 3. FORMS
-9. SUB SECTION AND TOGGLE
+7. NESTED SUB-SECTIONS
+8. SUB SECTION AND TOGGLE
+9. DROPDOWN STYLE
 10. RADIO BUTTON STYLE
 11. CHECKBOX STYLE
 12. BUTTON STYLE
@@ -27,6 +29,16 @@ div {
 
   --formPurpleBorder: #B8A7E6;
   --formPurpleSoft: #F1EEFB;
+
+  --formPinkBorder: #E6A7C6;
+  --formPinkSoft: #FDF1F7;
+
+  --formGreenBorder: #9ECFB5;   /* muted sage green */
+  --formGreenSoft:   #F1FAF6;   /* very light mint background */
+
+  --formSlateBorder: #9AA7B8;   /* cool blue-grey */
+  --formSlateSoft:   #F2F5F9;   /* airy slate background */
+
 }
 *,
 *::before,
@@ -207,7 +219,23 @@ select:focus {
 /********** 3. FORMS END **********/
 
 
-/********** 9. SUB SECTION AND TOGGLE START **********/
+
+
+/********** 7. NESTED SUB-SECTIONS START **********/
+
+/* Demo section: show nesting without click-to-expand */
+.form-section--demo-nesting .sub-questions{
+  display: block;
+}
+
+
+/********** 7. NESTED SUB-SECTIONS END **********/
+
+
+
+
+
+/********** 8. SUB SECTION AND TOGGLE START **********/
 /* Toggling */
 /* Toggle base */
 .toggle {
@@ -286,9 +314,35 @@ select:focus {
   padding-left: 60px;
   border-left: 2px solid var(--formPurpleBorder);
   background-color: var(--formPurpleSoft);
-  margin-top: -6px;
+  margin-top: 2px;
   margin-left: 10px;
 }
+
+
+.sub-pink {
+  padding-left: 60px;
+  border-left: 2px solid var(--formPinkBorder);
+  background-color: var(--formPinkSoft);
+  margin-top: 2px;
+  margin-left: 20px;
+}
+
+.sub-green {
+  padding-left: 60px;
+  border-left: 2px solid var(--formGreenBorder);
+  background-color: var(--formGreenSoft);
+  margin-top: 2px;
+  margin-left: 30px;
+}
+
+.sub-slate {
+  padding-left: 60px;
+  border-left: 2px solid var(--formSlateBorder);
+  background-color: var(--formSlateSoft);
+  margin-top: 2px;
+  margin-left: 40px;
+}
+
 
 .question-body.is-expanded .sub-questions {
   display: block;
@@ -350,9 +404,64 @@ select:focus {
   width: 100%;
 }
 
-/********** 9. SUB SECTION AND TOGGLE START **********/
+/********** 8. SUB SECTION AND TOGGLE START **********/
 
 
+/********** 9. DROPDOWN STYLE START **********/
+
+/* Select wrapper gives us a consistent arrow */
+.select-wrap{
+  position: relative;
+  width: 100%;
+}
+
+/* Make select match your inputs */
+.control--select{
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  padding-right: 44px; /* space for arrow */
+  cursor: pointer;
+}
+
+/* Custom arrow */
+.select-wrap::after{
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #6B7280;
+  border-bottom: 2px solid #6B7280;
+  transform: translateY(-60%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* Hover/focus states: inherit your orange styling, but keep it consistent */
+.select-wrap:hover .control--select{
+  border-color: var(--brightOrange);
+}
+
+.control--select:focus{
+  border-color: var(--brightOrange);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+}
+
+/* Disabled placeholder option should look muted */
+.control--select option[disabled]{
+  color: #9CA3AF;
+}
+
+/* iPad tap target - ensure it feels chunky */
+.control--select{
+  min-height: 44px;
+}
+
+
+
+/********** 9. DROPDOWN STYLE END **********/
 
 
 /********** 10. RADIO BUTTON STYLE START **********/
@@ -447,6 +556,34 @@ select:focus {
   gap: 10px;
 }
 
+.radio-note{
+  font-size: 14px;
+  color: var(--mainTextColor);
+  font-weight: 400;
+
+  /* makes it sit nicely next to the pills */
+  align-self: center;
+
+  /* lets it wrap instead of squashing everything */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sub-controls{
+  align-items: center;
+}
+
+.radio-note{
+  display: flex;
+  align-items: center;
+  height: 44px;            /* match radio-pill min-height */
+  line-height: 1.4;
+}
+.radio-note{
+  transform: translateY(-3px);
+}
+
+
 
 /********** 10. RADIO BUTTON STYLE START **********/
 
@@ -464,9 +601,21 @@ select:focus {
   user-select: none;
 }
 
-.check-row:hover{
+/* hover only */
+.check-row:hover {
   background: #F9FAFB;
 }
+
+/* checked = neutral grey */
+.check-row:has(.check-row__input:checked) {
+  background: #F9FAFB;
+}
+
+/* indeterminate = soft orange tint */
+.check-row:has(.check-row__input:indeterminate) {
+  background: transparent;
+}
+
 
 /* hide real checkbox but keep accessible */
 .check-row__input{
@@ -541,6 +690,21 @@ select:focus {
   border-bottom: 0;
   border-top: 3px solid var(--brightOrange);
   transform: none;
+}
+
+/* allow sub-controls children to fill available width */
+.sub-controls {
+  align-items: flex-start; /* better for stacked checkboxes */
+}
+
+/* force the container to expand */
+.sub-controls .field-container.full {
+  flex: 1 1 100%;
+}
+
+/* make each checkbox row span full width */
+.check-row {
+  width: 100%;
 }
 
 /********** 11. CHECKBOX STYLE END **********/
