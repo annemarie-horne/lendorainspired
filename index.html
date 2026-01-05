@@ -14,15 +14,39 @@
 </head>
 <body>
   <div class="white-shadowed-section-frame-outter">
+
+
+    <!-- ****** FORM CONTROLS START ****** -->
+    <div class="comment-controls" role="group" aria-label="Comment controls">
+      <button type="button" class="comment-control" data-comments-action="expand">
+        Expand all
+      </button>
+
+      <button type="button" class="comment-control" data-comments-action="collapse">
+        Collapse all
+      </button>
+
+      <label class="check-row remember-comments">
+        <input type="checkbox" class="check-row__input" id="rememberCommentsChoice">
+        <span class="check-row__box" aria-hidden="true"></span>
+        <span class="check-row__text">Remember my choice</span>
+      </label>
+
+      <span class="comment-controls__meta" id="commentPrefHint" aria-live="polite"></span>
+    </div>
+
+    <!-- ****** FORM CONTROLS END ****** -->
+
+
     <div class="gray-section-frame">
 
 
-
-      <!-- ****** MAIN SECTION A START ****** -->
+      
+      <!-- ****** REGULAR FORM START ****** -->
       <div class="white-shadowed-section-frame">
 
         <div class="section-title">
-          Main Section A
+          Regular Form
         </div>
         <div class="section-description">
           Demonstrating a regular form with no numbering.
@@ -31,28 +55,28 @@
         <div class="form-grid">
 
           <div class="field-container">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="Provide full name" />
+            <label for="firstName"><span class="field-required">*</span>First Name</label>
+            <input type="text" id="firstName" placeholder="Provide full first name" />
           </div>
 
           <div class="field-container">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" />
+            <label for="lastName"><span class="field-required">*</span>Last Name</label>
+            <input type="text" id="lastName" placeholder="Provide last name" />
           </div>
 
           <div class="field-container">
-            <label for="eMail">Email</label>
-            <input type="email" id="eMail" />
+            <label for="eMail"><span class="field-required">*</span>Email</label>
+            <input type="email" id="eMail" placeholder="Work email" />
           </div>
 
           <div class="field-container">
-            <label for="cellPhone">Cell Phone</label>
-            <input type="text" id="cellPhone" />
+            <label for="cellPhone"><span class="field-required">*</span>Cell Phone</label>
+            <input type="text" id="cellPhone" placeholder="Work cellphone" />
           </div>
 
           <div class="field-container full">
-            <label for="street">Address</label>
-            <input type="text" id="street" />
+            <label for="street"><span class="field-required">*</span>Address</label>
+            <input type="text" id="street" placeholder="Work address" />
           </div>
 
         </div>
@@ -63,10 +87,111 @@
         </button>
 
       </div>
-      <!-- ****** MAIN SECTION A END ****** -->
+      <!-- ****** REGULAR FORM END ****** -->
 
 
       <div class="ui-notes">👆 NOTE: Take note that each section is wrapped in a white frame with rounded corners and a drop shaddow.</div>
+
+
+      <!-- ****** ERROR FORM START ****** -->
+      <div class="white-shadowed-section-frame">
+
+        <div class="section-title">
+          Error Form
+        </div>
+        <div class="section-description">
+          Demonstrating an error form with mandatory fields.
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="field-container has-error">
+            <label for="firstName"><span class="field-required">*</span>First Name</label>
+            <input type="text" id="firstName" placeholder="Provide full first name" />
+            <div class="field-error">First name is required.</div>
+          </div>
+
+          <div class="field-container has-error">
+            <label for="lastName"><span class="field-required">*</span>Last Name</label>
+            <input type="text" id="lastName" placeholder="Provide last name" />
+            <div class="field-error">Last name is required.</div>
+          </div>
+
+          <div class="field-container has-error">
+            <label for="eMail"><span class="field-required">*</span>Email</label>
+            <input type="email" id="eMail" placeholder="Work email" />
+            <div class="field-error">Please enter a valid email address.</div>
+          </div>
+
+          <div class="field-container has-error">
+            <label for="cellPhone"><span class="field-required">*</span>Cell Phone</label>
+            <input type="text" id="cellPhone" placeholder="Work phone" />
+            <div class="field-error">Cell phone number is required.</div>
+          </div>
+
+          <div class="field-container full has-error">
+            <label for="street"><span class="field-required">*</span>Address</label>
+            <input type="text" id="street" placeholder="Work address" />
+            <div class="field-error">Address is required.</div>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <!-- ****** ERROR FORM END ****** -->
+
+
+      <!-- ****** COMMENTS SECTION START ****** -->
+      <div class="white-shadowed-section-frame">
+        <div class="section-title">
+          Comments (Notes)
+        </div>
+        <div class="section-description">
+          Demonstrating expandable comments on fields.
+        </div>
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">1</div>
+            <div class="question-text">Text. With expandable comment.</div>
+          </div>
+
+          <div class="question-body">
+
+            <details class="expand-note subtle">
+              <summary class="expand-note__summary">
+                View instructions
+              </summary>
+
+              <div class="expand-note__content">
+                <p>Sentence 1: Explain what the user should type in this field.</p>
+                <p>Sentence 2: Mention any formatting rules (e.g., full name, no initials).</p>
+                <p>Sentence 3: Add a quick example if helpful.</p>
+                <p>Sentence 4: Mention what to do if they’re unsure.</p>
+                <p>Sentence 5: Any extra context or warning goes here.</p>
+              </div>
+            </details>
+
+            <div class="field-with-attach">
+              <input class="control" type="text" placeholder="TAKE NOTE OF THE VIEW INSTRUCTIONS JUST ABOVE THE TEXT INPUT">
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+        
+      </div>
+      <!-- ****** COMMENTS SECTION END ****** -->
+
+
+       <div class="ui-notes">👆 NOTE: This section has a small "View Instructions" below the question that can be expanded / collapsed.</div>
 
 
       <!-- ****** TEXT FIELD SECTION START ****** -->
@@ -77,6 +202,7 @@
         <div class="section-description">
           Demonstrating Text fields and variations.
         </div>
+
 
         <div class="question-block">
           <div class="question-header">
@@ -110,6 +236,10 @@
         </div>
       </div>
       <!-- ****** TEXT FIELD SECTION END ****** -->
+
+
+
+
 
 
       <!-- ****** RADIO BUTTON SECTION START ****** -->
@@ -320,6 +450,7 @@
       <!-- ****** RADIO BUTTON SECTION END ****** -->
 
 
+
       <!-- ****** NUMBER FIELD SECTION START ****** -->
       <div class="white-shadowed-section-frame">
 
@@ -329,6 +460,7 @@
         <div class="section-description">
           Demonstrating Number fields and variations.
         </div>
+
 
         <div class="question-block">
           <div class="question-header">
@@ -342,8 +474,27 @@
               <input class="control input--compact" type="number" placeholder="">
             </div>
 
-
           </div>
+        </div>
+
+
+        <hr class="question-divider">
+
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">2</div>
+            <div class="question-text">Number Field. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            <div class="number-text-row">
+              <input class="control input--compact" type="number" placeholder="0">
+              <input class="control" type="text" placeholder="Add note or description">
+            </div>
+          </div>
+
         </div>
 
 
@@ -352,26 +503,26 @@
 
         <div class="question-block">
           <div class="question-header">
-            <div class="question-number">2</div>
+            <div class="question-number">3</div>
             <div class="question-text">Number Field. With Attachment.</div>
           </div>
 
           <div class="question-body">
-            
-            <div class="field-attach-row">
-              <input class="control" type="number" placeholder="0 - 100">
+            <div class="number-text-row">
+              <input class="control input--compact" type="number" placeholder="0">
+              <input class="control" type="text" placeholder="Add note or description">
               <button type="button" class="attach-btn-outside" aria-label="Attach file">
                 <span class="clip" aria-hidden="true">📎</span>
                 <span class="attach-count">0</span>
               </button>
             </div>
-            
           </div>
 
         </div>
 
       </div>
       <!-- ****** NUMBER FIELD SECTION END ****** -->
+
 
 
       <!-- ****** DATE FIELD SECTION START ****** -->
@@ -547,6 +698,7 @@
 
       </div>
       <!-- ****** DATE FIELD SECTION END ****** -->
+
 
 
       <!-- ****** DATETIME FIELD SECTION START ****** -->
@@ -894,6 +1046,7 @@
       <!-- ****** TIME FIELD SECTION END ****** -->
 
 
+
       <!-- ****** CHECKBOX SECTION START ****** -->
       <div class="white-shadowed-section-frame">
 
@@ -965,52 +1118,120 @@
         </div>
         
 
-        
         <hr class="question-divider">
 
         
         <div class="question-block">
           <div class="question-header">
             <div class="question-number">3</div>
-            <div class="question-text">Checkbox with Text. Multiple.</div>
+            <div class="question-text">Checkbox with Text. Multiple. With Text.</div>
           </div>
 
           <div class="question-body">
             
             <div class="field-container full">
-              <label class="check-row">
-                <input type="checkbox" class="check-row__input">
-                <span class="check-row__box" aria-hidden="true"></span>
-                <span class="check-row__text">Option 1.</span>
-              </label>
-              <label class="check-row">
-                <input type="checkbox" class="check-row__input">
-                <span class="check-row__box" aria-hidden="true"></span>
-                <span class="check-row__text">Option 2 with extra text.</span>
-              </label>
-              <label class="check-row">
-                <input type="checkbox" class="check-row__input">
-                <span class="check-row__box" aria-hidden="true"></span>
-                <span class="check-row__text">Option 3 with more extra text over here.</span>
-              </label>
-              <label class="check-row">
-                <input type="checkbox" class="check-row__input">
-                <span class="check-row__box" aria-hidden="true"></span>
-                <span class="check-row__text">Option 4 extra super long text that can fill a long checkbox here.</span>
-              </label>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 1.</span>
+                </label>
+                <input type="text" class="control" placeholder="Add details (optional)">
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 2 with extra text.</span>
+                </label>
+                <input type="text" class="control" placeholder="Add details (optional)">
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 3 with more extra text over here.</span>
+                </label>
+                <input type="text" class="control" placeholder="Add details (optional)">
+              </div>
+
             </div>
+
             
           </div>
 
         </div>
         
 
+        <hr class="question-divider">
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">4</div>
+            <div class="question-text">Checkbox with Text. Multiple. With Text. With Upload.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full">
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 1.</span>
+                </label>
+                <input type="text" class="control" placeholder="Add details (optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 2 with extra text.</span>
+                </label>
+                <input type="text" class="control" placeholder="Add details (optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 3 with more extra text over here.</span>
+                </label>
+                <input type="text" class="control" placeholder="Add details (optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+            </div>
+
+            
+          </div>
+
+        </div>
+
+
       </div>
       <!-- ****** CHECKBOX SECTION END ****** -->
 
 
 
-      <!-- ****** CHECKBOX SECTION START ****** -->
+      <!-- ****** TEXT AREA SECTION START ****** -->
       <div class="white-shadowed-section-frame">
 
         <div class="section-title">
@@ -1035,7 +1256,8 @@
         </div>
 
       </div>
-      <!-- ****** CHECKBOX SECTION END ****** -->
+      <!-- ****** TEXT AREA SECTION END ****** -->
+
 
 
       <!-- ****** ADDRESS SECTION START ****** -->
@@ -1099,6 +1321,7 @@
       <!-- ****** ADDRESS SECTION END ****** -->
 
 
+
       <!-- ****** DROPDOWN SECTION START ****** -->
       <div class="white-shadowed-section-frame">
 
@@ -1120,8 +1343,8 @@
             
             <div class="field-container full">
               <label for="propertyType">Property Type</label>
-              <div class="select-wrap">
-                <select id="propertyType" class="control control--select">
+              <div class="select-wrap select-wrap--compact">
+                <select id="propertyType" class="control control--select control--select-compact">
                   <option value="" selected disabled>Select an option…</option>
                   <option value="house">House</option>
                   <option value="apartment">Apartment</option>
@@ -1136,26 +1359,220 @@
 
         </div>
 
+
+        <hr class="question-divider">
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">2</div>
+            <div class="question-text">Dropdown. With text.</div>
+          </div>
+
+          <div class="question-body">
+
+            <div class="field-container full">
+              <label for="propertyType">Property Type</label>
+
+              <div class="select-text-row">
+                <div class="select-wrap select-wrap--compact">
+                  <select id="propertyType" class="control control--select control--select-compact">
+                    <option value="" selected disabled>Select an option…</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="land">Land</option>
+                  </select>
+                </div>
+
+                <input type="text" class="control" placeholder="Add note or description">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <hr class="question-divider">
+
+        
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">3</div>
+            <div class="question-text">Dropdown. With text. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+
+            <div class="field-container full">
+              <label for="propertyType">Property Type</label>
+
+              <div class="select-text-row">
+                <div class="select-wrap select-wrap--compact">
+                  <select id="propertyType" class="control control--select control--select-compact">
+                    <option value="" selected disabled>Select an option…</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="land">Land</option>
+                  </select>
+                </div>
+
+                <input type="text" class="control" placeholder="Add note or description">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
-      <!-- ****** DROPDOWN SECTION START ****** -->
+      <!-- ****** DROPDOWN SECTION END ****** -->
       
 
 
 
-      <div class="white-shadowed-section-frame"><!-- white-shadowed-section-frame section C-->
+      <!-- ****** STATS SECTION START ****** -->
+      <div class="white-shadowed-section-frame">
+
+        <div class="section-title">Stats</div>
+        <div class="section-description">
+          Demonstrating a daily stats grid (date + stat + upload + note).
+        </div>
+
+        <div class="question-header">
+          <div class="question-number">1</div>
+          <div class="question-text">How many cups of coffee did you drink each day?</div>
+        </div>
+        <div class="stats-grid" role="table" aria-label="Daily stats">
+
+          <!-- Header row -->
+          <div class="stats-head" role="row">
+            <div class="stats-th" role="columnheader">Date</div>
+            <div class="stats-th" role="columnheader">Stat</div>
+            <div class="stats-th stats-th--center" role="columnheader">Upload</div>
+            <div class="stats-th" role="columnheader">Note</div>
+          </div>
+
+          <!-- Row 1 -->
+          <div class="stats-row" role="row">
+            <div class="stats-date" role="cell">01 Jan 2026</div>
+
+            <div class="stats-label" role="cell">Cups of coffee consumed</div>
+
+            <div class="stats-upload" role="cell">
+              <button type="button" class="attach-btn-outside" aria-label="Upload for 01 Jan 2026">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+
+            <div role="cell">
+              <input class="control" type="text" placeholder="Optional note" />
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="stats-row" role="row">
+            <div class="stats-date">02 Jan 2026</div>
+            <div class="stats-label">Cups of coffee consumed</div>
+            <div class="stats-upload">
+              <button type="button" class="attach-btn-outside">
+                <span class="clip">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+            <div>
+              <input class="control" type="text" placeholder="Optional note" />
+            </div>
+          </div>
+
+
+          <!-- Row 3 -->
+          <div class="stats-row" role="row">
+            <div class="stats-date" role="cell">03 Jan 2026</div>
+
+           <div class="stats-label">Cups of coffee consumed</div>
+
+            <div class="stats-upload" role="cell">
+              <button type="button" class="attach-btn-outside" aria-label="Upload for 03 Jan 2026">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+
+            <div role="cell">
+              <input class="control" type="text" placeholder="Short note (optional)" />
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="stats-row" role="row">
+            <div class="stats-date" role="cell">04 Jan 2026</div>
+
+            <div class="stats-label">Cups of coffee consumed</div>
+
+            <div class="stats-upload" role="cell">
+              <button type="button" class="attach-btn-outside" aria-label="Upload for 04 Jan 2026">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+
+            <div role="cell">
+              <input class="control" type="text" placeholder="Short note (optional)" />
+            </div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="stats-row" role="row">
+            <div class="stats-date" role="cell">05 Jan 2026</div>
+
+            <div class="stats-label">Cups of coffee consumed</div>
+
+            <div class="stats-upload" role="cell">
+              <button type="button" class="attach-btn-outside" aria-label="Upload for 05 Jan 2026">
+                <span class="clip" aria-hidden="true">📎</span>
+                <span class="attach-count">0</span>
+              </button>
+            </div>
+
+            <div role="cell">
+              <input class="control" type="text" placeholder="Short note (optional)" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ****** STATS SECTION END ****** -->
+
+
+
+
+      <!-- ****** CLICK AND REVEAL SECTION START ****** -->
+      <div class="white-shadowed-section-frame">
 
         <div class="section-title">
-          Main Section C
+          Click and Reveal
         </div>
         <div class="section-description">
-          Demonstrating a section with sub and sub-sub sections.
+          Demonstrating click to reveal sections with sub and sub-sub sections.
         </div>
         
 
-        <!-- Question 33 -->
+
         <div class="question-block">
           <div class="question-header">
-            <div class="question-number">33</div>
+            <div class="question-number">1</div>
             <div class="question-text">Question with regular sub sections.</div>
           </div>
 
@@ -1174,7 +1591,7 @@
               
               <div class="sub-question"><!-- Question 33.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">33.1</span>
+                  <span class="sub-number">1.1</span>
                   <span class="sub-text">Text Only</span>
                 </div>
                 <div class="sub-controls">
@@ -1189,7 +1606,7 @@
 
               <div class="sub-question"><!-- Question 33.2 -->
                 <div class="sub-header">
-                  <span class="sub-number">33.2</span>
+                  <span class="sub-number">1.2</span>
                   <span class="sub-text">Yes, No and Maybe. With Text.</span>
                 </div>
                 <div class="sub-controls">
@@ -1226,7 +1643,7 @@
 
               <div class="sub-question"><!-- Question 33.3 -->
                 <div class="sub-header">
-                  <span class="sub-number">33.3</span>
+                  <span class="sub-number">1.3</span>
                   <span class="sub-text">Choose more than one option.</span>
                 </div>
                 <div class="sub-controls">
@@ -1268,10 +1685,10 @@
 
 
 
-        <!-- Question 34 -->
+        
         <div class="question-block">
           <div class="question-header">
-            <div class="question-number">34</div>
+            <div class="question-number">2</div>
             <div class="question-text">Question with regular sub sections expanding to sub-sub sections.</div>
           </div>
 
@@ -1287,9 +1704,9 @@
             <!-- Sub questions -->
             <div class="sub-questions">
               
-              <div class="sub-question"><!-- Question 34.1 -->
+              <div class="sub-question">
                 <div class="sub-header">
-                  <span class="sub-number">34.1</span>
+                  <span class="sub-number">2.1</span>
                   <span class="sub-text">Select the date and time over here.</span>
                 </div>
                 <div class="sub-controls">
@@ -1299,16 +1716,16 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 34.1 -->
+              </div>
 
             </div><!-- /Sub questions -->
 
             <!-- Sub questions -->
             <div class="sub-questions sub-purple">
               
-              <div class="sub-question"><!-- Question 34.1.1 -->
+              <div class="sub-question"><!-- Question 2.1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">34.1.1</span>
+                  <span class="sub-number">2.1.1</span>
                   <span class="sub-text">Select the date and time over here.</span>
                 </div>
                 <div class="sub-controls">
@@ -1318,13 +1735,13 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 34.1.1 -->
+              </div><!-- /Question 2.1.1 -->
               
               <hr class="question-divider">
 
-              <div class="sub-question"><!-- Question 34.1.2 -->
+              <div class="sub-question"><!-- Question 2.1.2 -->
                 <div class="sub-header">
-                  <span class="sub-number">34.1.2</span>
+                  <span class="sub-number">2.1.2</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1334,7 +1751,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 34.1.2 -->
+              </div><!-- /Question 2.1.2 -->
 
 
 
@@ -1343,9 +1760,9 @@
             <!-- Sub questions -->
             <div class="sub-questions">
               
-              <div class="sub-question"><!-- Question 34.1 -->
+              <div class="sub-question"><!-- Question 2.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">34.2</span>
+                  <span class="sub-number">2.2</span>
                   <span class="sub-text">Address Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1385,7 +1802,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 34.1 -->
+              </div><!-- /Question 2.1 -->
               
 
             </div><!-- /Sub questions -->
@@ -1404,19 +1821,15 @@
 
 
 
-      </div>  <!-- /white-shadowed-section-frame section C-->
+      </div>
+      <!-- ****** CLICK AND REVEAL SECTION END ****** -->
 
 
 
+      <!-- ****** NESTED SECTION START ****** -->
+      <div class="white-shadowed-section-frame white-shadowed-section-frame--demo-nesting">
 
-
-
-
-
-
-      <div class="white-shadowed-section-frame white-shadowed-section-frame--demo-nesting"><!-- white-shadowed-section-frame section D-->
-
-        <div class="section-title">Main Section D</div>
+        <div class="section-title">Nested Sub Sections</div>
         <div class="section-description">
           Demonstrating nested sub sections.
         </div>
@@ -1424,7 +1837,7 @@
         <!-- Question 33 -->
         <div class="question-block">
           <div class="question-header">
-            <div class="question-number">35</div>
+            <div class="question-number">1</div>
             <div class="question-text">Question with nested sub sections.</div>
           </div>
 
@@ -1434,9 +1847,9 @@
             <!-- Sub questions -->
             <div class="sub-questions">
               
-              <div class="sub-question"><!-- Question 35.1 -->
+              <div class="sub-question"><!-- Question 1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1</span>
+                  <span class="sub-number">1.1</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1446,16 +1859,16 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1 -->
+              </div><!-- /Question 1.1 -->
 
             </div><!-- /Sub questions -->
 
             <!-- Sub questions -->
             <div class="sub-questions sub-purple">
               
-              <div class="sub-question"><!-- Question 35.1.1 -->
+              <div class="sub-question"><!-- Question 1.1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1</span>
+                  <span class="sub-number">1.1.1</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1465,7 +1878,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1 -->
+              </div><!-- /Question 1.1.1 -->
               
 
 
@@ -1475,9 +1888,9 @@
             <!-- Sub questions -->
             <div class="sub-questions sub-pink">
               
-              <div class="sub-question"><!-- Question 35.1.1.1 -->
+              <div class="sub-question"><!-- Question 1.1.1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.1</span>
+                  <span class="sub-number">1.1.1.1</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1487,13 +1900,13 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.1 -->
+              </div><!-- /Question 1.1.1.1 -->
               
               <hr class="question-divider">
 
-              <div class="sub-question"><!-- Question 35.1.1.2 -->
+              <div class="sub-question"><!-- Question 1.1.1.2 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.2</span>
+                  <span class="sub-number">1.1.1.2</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1503,7 +1916,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.2 -->
+              </div><!-- /Question 1.1.1.2 -->
 
 
 
@@ -1513,9 +1926,9 @@
             <!-- Sub questions -->
             <div class="sub-questions sub-green">
               
-              <div class="sub-question"><!-- Question 35.1.1.1.1 -->
+              <div class="sub-question"><!-- Question 1.1.1.1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.1.1</span>
+                  <span class="sub-number">1.1.1.1.1</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1525,7 +1938,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.1.1 -->
+              </div><!-- /Question 1.1.1.1.1 -->
               
             
 
@@ -1536,9 +1949,9 @@
             <!-- Sub questions -->
             <div class="sub-questions sub-slate">
               
-              <div class="sub-question"><!-- Question 35.1.1.1.1.1 -->
+              <div class="sub-question"><!-- Question 1.1.1.1.1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.1.1.1</span>
+                  <span class="sub-number">1.1.1.1.1.1</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1548,13 +1961,13 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.1.1.1 -->
+              </div><!-- /Question 1.1.1.1.1.1 -->
 
               <hr class="question-divider">
 
-              <div class="sub-question"><!-- Question 35.1.1.1.1.2 -->
+              <div class="sub-question"><!-- Question 1.1.1.1.1.2 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.1.1.2</span>
+                  <span class="sub-number">1.1.1.1.1.2</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1564,13 +1977,13 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.1.1.2 -->
+              </div><!-- /Question 1.1.1.1.1.2 -->
 
               <hr class="question-divider">
 
-              <div class="sub-question"><!-- Question 35.1.1.1.1.3 -->
+              <div class="sub-question"><!-- Question 1.1.1.1.1.3 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.1.1.3</span>
+                  <span class="sub-number">1.1.1.1.1.3</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1580,7 +1993,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.1.1.3 -->
+              </div><!-- /Question 1.1.1.1.1.3 -->
               
             
 
@@ -1590,9 +2003,9 @@
              <!-- Sub questions -->
             <div class="sub-questions sub-green">
               
-              <div class="sub-question"><!-- Question 35.1.1.1.2 -->
+              <div class="sub-question"><!-- Question 1.1.1.1.2 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.1.1.1.2</span>
+                  <span class="sub-number">1.1.1.1.2</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1602,7 +2015,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1.1.1.2 -->
+              </div><!-- /Question 1.1.1.1.2 -->
               
             
 
@@ -1612,9 +2025,9 @@
             <!-- Sub questions -->
             <div class="sub-questions">
               
-              <div class="sub-question"><!-- Question 35.1 -->
+              <div class="sub-question"><!-- Question 1.1 -->
                 <div class="sub-header">
-                  <span class="sub-number">35.2</span>
+                  <span class="sub-number">1.2</span>
                   <span class="sub-text">Text Only.</span>
                 </div>
                 <div class="sub-controls">
@@ -1624,7 +2037,7 @@
                     
                   </div>
                 </div>
-              </div><!-- /Question 35.1 -->
+              </div><!-- /Question 1.1 -->
               
               <hr class="question-divider">
 
@@ -1640,12 +2053,8 @@
 
         <div class="ui-notes">👆 NOTE: The background color, left-border color and left-border thickness should be user-defined.</div>
 
-      </div><!-- /white-shadowed-section-frame section D -->
-
-
-
-
-
+      </div>
+      <!-- ****** NESTED SECTION END ****** -->
 
 
 

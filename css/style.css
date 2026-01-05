@@ -2,7 +2,10 @@
 INDEX
 1. MAIN AND GENERAL
 2. CONTAINERS AND SECTIONS
-3. FORMS
+3. FORMS AND ERRORS AND ERRORS
+4. FORM CONTROLS
+5. STATS
+6. QUESTION COMMENTS BLOCK
 7. NESTED SUB-SECTIONS
 8. SUB SECTION AND TOGGLE
 9. DROPDOWN STYLE
@@ -10,6 +13,7 @@ INDEX
 11. CHECKBOX STYLE
 12. BUTTON STYLE
 13. DATE STYLE
+14. NUMBER STYLE
 */
 
 div {
@@ -123,7 +127,7 @@ body {
 }
 /********** 2. CONTAINERS AND SECTIONS END **********/
 
-/********** 3. FORMS START **********/
+/********** 3. FORMS AND ERRORS START **********/
 /* Form */
 .form-grid {
   display: grid;
@@ -246,9 +250,287 @@ select:focus {
   height: 1px;
   background-color: #E5E7EB;
 }
-/********** 3. FORMS END **********/
 
 
+
+/* field container error state */
+.field-container.has-error input{
+  border-color: var(--radioRed);
+}
+
+/* override hover/focus so error stays dominant */
+.field-container.has-error input:hover,
+.field-container.has-error input:focus{
+  border-color: var(--radioRed);
+  box-shadow: 0 0 0 3px rgba(228, 19, 37, 0.18);
+}
+
+/* error text under field */
+.field-error{
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--radioRed);
+}
+
+/* error button state */
+.btn-pill--error{
+  background: var(--radioRed);
+  border-color: var(--radioRed);
+}
+
+.btn-pill--error:hover{
+  filter: brightness(0.96);
+}
+.field-required{
+  color: var(--radioRed); /* matches error state */
+  margin-right: 4px;
+  font-weight: 700;
+}
+
+/********** 3. FORMS AND ERRORS END **********/
+
+/********** 4. FORM CONTROLS START **********/
+/* top control bar */
+.comment-controls{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 18px;
+  flex-wrap: nowrap;      /* keep one row */
+}
+
+/* buttons */
+.comment-control{
+  flex: 0 0 auto;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.comment-control:hover{
+  border-color: var(--brightOrange);
+}
+
+.comment-control:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+  border-color: var(--brightOrange);
+}
+
+/* checkbox inside bar: keep it compact + not full-width */
+.comment-controls .check-row{
+  flex: 0 0 auto;
+  width: auto;            /* override your global .check-row{ width:100% } */
+  padding: 6px 10px;
+  min-height: 36px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* (optional) make hover a little lighter in the toolbar */
+.comment-controls .check-row:hover{
+  background: #F9FAFB;
+}
+
+/* right-side hint text */
+.comment-controls__meta{
+  margin-left: auto;
+  font-size: 13px;
+  color: #6B7280;
+  white-space: nowrap;
+}
+
+
+
+/********** 4. FORM CONTROLS END **********/
+
+/********** 5. STATS START **********/
+/* STATS GRID */
+.stats-grid{
+  margin-top: 10px;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* 4 columns: Date | Stat | Upload | Note */
+.stats-head,
+.stats-row{
+  display: grid;
+  grid-template-columns: 140px 200px 92px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+.stats-head{
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.stats-th{
+  font-size: 12px;
+  font-weight: 700;
+  color: #6B7280;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.stats-th--center{
+  text-align: center;
+}
+
+.stats-row{
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.stats-row:last-child{
+  border-bottom: 0;
+}
+/* stat label column (read-only, like date) */
+.stats-label{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  white-space: nowrap;
+
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.stats-date{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  white-space: nowrap;
+
+  /* makes it feel non-editable */
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+/* center the upload button cell */
+.stats-upload{
+  display: flex;
+  justify-content: center;
+}
+
+/* keep inputs nicely aligned in the grid */
+.stats-row .control{
+  width: 100%;
+}
+
+/* Optional: subtle row hover */
+.stats-row:hover{
+  background: #FCFCFD;
+}
+
+/* Responsive: stack into 2 rows on small screens */
+@media (max-width: 720px){
+  .stats-head{
+    display: none; /* hides header on mobile */
+  }
+
+  .stats-row{
+    grid-template-columns: 1fr 92px;
+    grid-template-areas:
+      "date upload"
+      "stat stat"
+      "note note";
+    gap: 10px;
+  }
+
+  .stats-row .stats-date{ grid-area: date; }
+  .stats-row .stats-upload{ grid-area: upload; }
+  .stats-row > div:nth-child(2){ grid-area: stat; } /* stat input cell */
+  .stats-row > div:nth-child(4){ grid-area: note; } /* note input cell */
+}
+
+/********** 5. STATS END **********/
+
+/********** 6. QUESTION COMMENTS BLOCK START **********/
+/* subtle expandable helper */
+.expand-note.subtle{
+  margin: 6px 0 10px;
+}
+
+/* clickable line */
+.expand-note__summary{
+  list-style: none;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+
+  padding: 2px 0;
+}
+
+/* remove default marker */
+.expand-note__summary::-webkit-details-marker{
+  display: none;
+}
+
+/* small chevron */
+.expand-note__summary::after{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #9CA3AF;
+  border-bottom: 2px solid #9CA3AF;
+  transform: rotate(45deg);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+/* hover state */
+.expand-note__summary:hover{
+  color: var(--mainTextColor);
+}
+
+.expand-note__summary:hover::after{
+  border-color: var(--mainTextColor);
+}
+
+/* open state */
+.expand-note[open] .expand-note__summary::after{
+  transform: rotate(-135deg);
+}
+
+/* content text */
+.expand-note__content{
+  margin-top: 8px;
+  padding-left: 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6B7280;
+}
+
+.expand-note__content p{
+  margin: 0 0 8px;
+}
+.expand-note__content p:last-child{
+  margin-bottom: 0;
+}
+
+
+/********** 6. QUESTION COMMENTS BLOCK END **********/
 
 
 /********** 7. NESTED SUB-SECTIONS START **********/
@@ -490,6 +772,33 @@ select:focus {
 }
 
 
+/* row layout: compact select + text field */
+.select-text-row{
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+/* select stays compact like number field */
+.select-wrap--compact{
+  flex: 0 0 auto;
+  min-width: 180px;  /* tweak if you want smaller */
+  max-width: 240px;
+}
+
+/* make sure the select fills its wrapper */
+.control--select-compact{
+  width: 100%;
+}
+
+/* text input fills remaining space */
+.select-text-row .control:not(.control--select){
+  flex: 1 1 auto;
+  min-width: 0; /* critical for flex layouts */
+}
+
+
 
 /********** 9. DROPDOWN STYLE END **********/
 
@@ -623,18 +932,15 @@ select:focus {
   user-select: none;
 }
 
-/* hover only */
-.check-row:hover {
-  background: #F9FAFB;
-}
 
 /* checked = neutral grey */
 .check-row:has(.check-row__input:checked) {
   background: #F9FAFB;
 }
 
-/* indeterminate = soft orange tint */
-.check-row:has(.check-row__input:indeterminate) {
+/* indeterminate should never inherit hover/selected background */
+.check-row:has(.check-row__input:indeterminate),
+.check-row:has(.check-row__input:indeterminate):hover {
   background: transparent;
 }
 
@@ -728,6 +1034,25 @@ select:focus {
   width: 100%;
 }
 
+
+.check-input-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.check-input-row .check-row {
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.check-input-row .control {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+
 /********** 11. CHECKBOX STYLE END **********/
 
 
@@ -809,3 +1134,27 @@ select:focus {
 }
 
 /********** 13. DATE STYLE END **********/
+
+
+/********** 14. NUMBER STYLE START **********/
+.number-text-row {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+/* number stays compact */
+.number-text-row .input--compact {
+  flex: 0 0 auto;
+  min-width: 120px;
+  max-width: 160px;
+}
+
+/* text fills remaining space */
+.number-text-row .control:not(.input--compact) {
+  flex: 1 1 auto;
+  min-width: 0; /* critical for flex */
+}
+
+/********** 14. DATE STYLE END **********/
