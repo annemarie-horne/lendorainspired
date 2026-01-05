@@ -9,6 +9,7 @@ INDEX
 10. RADIO BUTTON STYLE
 11. CHECKBOX STYLE
 12. BUTTON STYLE
+13. DATE STYLE
 */
 
 div {
@@ -26,6 +27,8 @@ div {
   --formBlue: #99C8FF;
   --formLightBlue: #E9F0FE;
   --brightOrange: #FF7A59;
+
+  --radioRed: #E41325;
 
   --formPurpleBorder: #B8A7E6;
   --formPurpleSoft: #F1EEFB;
@@ -52,18 +55,45 @@ body {
   color: var(--mainTextColor);
   font-family: var(--mainFontFamily);
 }
+
+
+
+/* modern browsers */
+::placeholder {
+  color: #9CA3AF; /* soft neutral grey */
+  opacity: 1;     /* prevents Safari from fading it */
+}
+
+/* Safari / older WebKit */
+::-webkit-input-placeholder {
+  color: #9CA3AF;
+}
+
+/* Firefox */
+::-moz-placeholder {
+  color: #9CA3AF;
+  opacity: 1;
+}
+
 /********** 1. MAIN AND GENERAL END **********/
 
 
 /********** 2. CONTAINERS AND SECTIONS START **********/
+.ui-notes {
+  padding-bottom: 30px;
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: 18px;
+  color: blue;
+}
 /* Containers */
-.form-body-container {
+.gray-section-frame {
   background-color: #fafaf9;
   margin: 0 auto;
   padding: 20px;
   border-radius: 30px;
 }
-.form-section {
+.white-shadowed-section-frame, .white-shadowed-section-frame-outter {
   background-color: var(--sectionBG);
   border-radius: 24px;
   padding: 20px;
@@ -73,7 +103,7 @@ body {
       0 10px 15px -3px rgba(0,0,0,.1),
       0 4px 6px -4px rgba(0,0,0,.1);
 }
-.form-section-outter {
+.white-shadowed-section-frame-outter {
   margin: 25px;
 }
 
@@ -143,8 +173,8 @@ select:focus {
 .question-header {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 6px;
+  margin-bottom: 4px;
 }
 
 .question-number {
@@ -175,7 +205,7 @@ select:focus {
   font-weight: 400;
 }
 
-.date-input--compact{
+.input--compact{
   width: auto;
   min-width: 140px;     /* enough for YYYY-MM-DD */
   max-width: 180px;     /* prevents it getting silly */
@@ -191,14 +221,14 @@ select:focus {
 }
 
 /* compact date */
-.date-input--compact{
+.input--compact{
   flex: 0 0 auto;
   min-width: 140px;     /* fits YYYY-MM-DD comfortably */
   max-width: 180px;
 }
 
 /* text field fills remaining space */
-.date-text-row .control:not(.date-input--compact){
+.date-text-row .control:not(.input--compact){
   flex: 1 1 auto;
   min-width: 0;         /* critical in flex layouts */
 }
@@ -224,7 +254,7 @@ select:focus {
 /********** 7. NESTED SUB-SECTIONS START **********/
 
 /* Demo section: show nesting without click-to-expand */
-.form-section--demo-nesting .sub-questions{
+.white-shadowed-section-frame--demo-nesting .sub-questions{
   display: block;
 }
 
@@ -512,37 +542,29 @@ select:focus {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 2px solid #D1D5DB;     /* thin grey border */
-  background: #ffffff;
+  border: 1px solid #858585;   /* dark gray border */
+  background: var(--formGrey);        /* dark gray fill */
   flex-shrink: 0;
 }
 
 /* inner dot (always present) */
 .pill-dot::after {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  border-radius: 50%;
-  background: #111827;          /* black center dot */
+  content: none;
 }
 
-/* selected state */
+/* CHECKED state */
 .radio-pill:has(input:checked) .pill-dot {
-  background: #99c8ff;          /* light blue fill */
-  border-color: #111827;        /* black border */
+  background: #ffffff;        /* white base */
+  border-color: var(--radioRed);      /* red border */
 }
 
-/* blue outer ring */
-.radio-pill:has(input:checked) .pill-dot::before {
+/* big red inner dot */
+.radio-pill:has(input:checked) .pill-dot::after {
   content: "";
   position: absolute;
-  inset: -3px;
+  inset: 2px;                 /* controls dot size */
   border-radius: 50%;
-  border: 1px solid #99c8ff;    /* soft blue ring */
-}
-
-.radio-pill:has(input:checked) .pill-dot::after {
-  inset: 8px;
+  background: var(--radioRed);        /* red dot */
 }
 
 /* accessibility focus */
@@ -630,7 +652,6 @@ select:focus {
   height: 30px;
   border-radius: 6px;
   border: 1px solid #E5E7EB;
-  background: var(--formGrey);
   flex-shrink: 0;
   position: relative;
 
@@ -714,13 +735,7 @@ select:focus {
 .btn-pill{
   display: inline-flex;        /* critical */
   align-items: center;
-  justify-content: center;
 
-  width: auto;                 /* prevent stretching */
-  min-width: 0;                /* just in case */
-  white-space: nowrap;         /* keep text on one line */
-
-  min-height: 48px;
   padding: 12px 22px;
   border-radius: 999px;
 
@@ -760,3 +775,37 @@ select:focus {
   box-shadow: none;
 }
 /********** 12. BUTTON STYLE END **********/
+
+
+/********** 13. DATE STYLE START **********/
+.date-range {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.date-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* label styling consistent with rest of form */
+.date-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+/* let the text field take remaining width */
+.date-field--grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* hide label but keep layout alignment */
+.visually-hidden {
+  visibility: hidden;
+  margin-bottom: 6px;
+}
+
+/********** 13. DATE STYLE END **********/
