@@ -22,7 +22,7 @@ div {
 
 /********** 1. MAIN AND GENERAL START **********/
 :root {
-  --pageBG: #e5e7eb;
+  --pageBG: #F3F6FA;
   --sectionBG: #ffffff;
   --canvasGray: #fafaf9;
   --mainTextColor: #374151;
@@ -92,7 +92,7 @@ body {
 }
 /* Containers */
 .gray-section-frame {
-  background-color: #fafaf9;
+  background-color: var(--canvasGray);
   margin: 0 auto;
   padding: 20px;
   border-radius: 30px;
@@ -183,7 +183,7 @@ select:focus {
 .question-number {
   font-size: 14px;
   font-weight: 600;
-  min-width: 20px;
+  min-width: 18px;
   color: var(--mainTextColor);
 }
 
@@ -844,20 +844,26 @@ select:focus {
   color: var(--mainTextColor);
 }
 
+
+
 /* base radio dot */
 .pill-dot {
   position: relative;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid #858585;   /* dark gray border */
-  background: var(--formGrey);        /* dark gray fill */
+  border: 1px solid #D1D5DB;   /* soft grey border */
+  background: #ffffff;        /* white base */
   flex-shrink: 0;
 }
 
 /* inner dot (always present) */
 .pill-dot::after {
-  content: none;
+  content: "";
+  position: absolute;
+  inset: 2px;                 /* same geometry as checked */
+  border-radius: 50%;
+  background: #D1D5DB;         /* washed-out grey dot */
 }
 
 /* CHECKED state */
@@ -874,6 +880,8 @@ select:focus {
   border-radius: 50%;
   background: var(--radioRed);        /* red dot */
 }
+
+
 
 /* accessibility focus */
 .radio-pill:has(input:focus-visible) {
@@ -956,7 +964,7 @@ select:focus {
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--formGrey);
   flex-shrink: 0;
   position: relative;
 
