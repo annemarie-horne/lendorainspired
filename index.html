@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 <body>
   <div class="white-shadowed-section-frame-outter">
@@ -541,7 +543,9 @@
           </div>
 
           <div class="question-body">
-            <input type="date" class="control date-input input--compact" />
+
+            <input type="text" class="control input--compact js-date" placeholder="Select date">
+
           </div>
 
         </div>
@@ -558,7 +562,7 @@
           <div class="question-body">
             
             <div class="date-text-row">
-              <input type="date" class="control date-input input--compact" />
+              <input type="text" class="control input--compact js-date" placeholder="Select date">
               <input type="text" class="control" placeholder="Notes (Optional)" />
             </div>
 
@@ -578,7 +582,7 @@
           <div class="question-body">
             
             <div class="date-text-row">
-              <input type="date" class="control date-input input--compact" />
+              <input type="text" class="control input--compact js-date" placeholder="Select date">
               <input type="text" class="control" placeholder="Notes (Optional)" />
               <button type="button" class="attach-btn-outside" aria-label="Attach file">
                 <span class="clip" aria-hidden="true">📎</span>
@@ -605,11 +609,11 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="date" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-date" placeholder="Select date">
               </div>
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="date" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-date" placeholder="Select date">
               </div>
             </div>
 
@@ -632,12 +636,14 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="date" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-date" placeholder="Select date">
+                <!-- <input type="date" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="date" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-date" placeholder="Select date">
+                <!-- <input type="date" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field date-field--grow">
@@ -665,12 +671,14 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="date" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-date" placeholder="Select date">
+                <!-- <input type="date" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="date" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-date" placeholder="Select date">
+                <!-- <input type="date" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field date-field--grow">
@@ -717,7 +725,9 @@
           </div>
 
           <div class="question-body">
-            <input type="datetime-local" class="control date-input input--compact" />
+            <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+
+            <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
           </div>
 
         </div>
@@ -734,7 +744,8 @@
           <div class="question-body">
             
             <div class="date-text-row">
-              <input type="datetime-local" class="control date-input input--compact" />
+              <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+              <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               <input type="text" class="control" placeholder="Notes (Optional)" />
             </div>
 
@@ -754,7 +765,8 @@
           <div class="question-body">
             
             <div class="date-text-row">
-              <input type="datetime-local" class="control date-input input--compact" />
+              <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+              <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               <input type="text" class="control" placeholder="Notes (Optional)" />
               <button type="button" class="attach-btn-outside" aria-label="Attach file">
                 <span class="clip" aria-hidden="true">📎</span>
@@ -781,11 +793,13 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="datetime-local" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+                <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               </div>
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="datetime-local" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+                <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               </div>
             </div>
 
@@ -808,12 +822,14 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="datetime-local" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+                <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="datetime-local" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+                <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field date-field--grow">
@@ -841,12 +857,14 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="datetime-local" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+                <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="datetime-local" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-datetime" placeholder="Select date & time">
+                <!-- <input type="datetime-local" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field date-field--grow">
@@ -890,7 +908,8 @@
           </div>
 
           <div class="question-body">
-            <input type="time" class="control date-input input--compact" />
+            <input type="text" class="control input--compact js-time" placeholder="Select time">
+            <!-- <input type="time" class="control date-input input--compact" /> -->
           </div>
 
         </div>
@@ -907,7 +926,8 @@
           <div class="question-body">
             
             <div class="date-text-row">
-              <input type="time" class="control date-input input--compact" />
+              <input type="text" class="control input--compact js-time" placeholder="Select time">
+              <!-- <input type="time" class="control date-input input--compact" /> -->
               <input type="text" class="control" placeholder="Notes (Optional)" />
             </div>
 
@@ -927,7 +947,8 @@
           <div class="question-body">
             
             <div class="date-text-row">
-              <input type="time" class="control date-input input--compact" />
+              <input type="text" class="control input--compact js-time" placeholder="Select time">
+              <!-- <input type="time" class="control date-input input--compact" /> -->
               <input type="text" class="control" placeholder="Notes (Optional)" />
               <button type="button" class="attach-btn-outside" aria-label="Attach file">
                 <span class="clip" aria-hidden="true">📎</span>
@@ -954,11 +975,13 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="time" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-time" placeholder="Select time">
+                <!-- <input type="time" class="control date-input input--compact" /> -->
               </div>
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="time" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-time" placeholder="Select time">
+                <!-- <input type="time" class="control date-input input--compact" /> -->
               </div>
             </div>
 
@@ -981,12 +1004,14 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="time" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-time" placeholder="Select time">
+                <!-- <input type="time" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="time" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-time" placeholder="Select time">
+                <!-- <input type="time" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field date-field--grow">
@@ -1014,12 +1039,14 @@
             <div class="date-range">
               <div class="date-field">
                 <label class="date-label">From</label>
-                <input type="time" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-time" placeholder="Select time">
+                <!-- <input type="time" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field">
                 <label class="date-label">To</label>
-                <input type="time" class="control date-input input--compact" />
+                <input type="text" class="control input--compact js-time" placeholder="Select time">
+                <!-- <input type="time" class="control date-input input--compact" /> -->
               </div>
 
               <div class="date-field date-field--grow">
@@ -2133,6 +2160,9 @@
 
     </div> <!-- /gray-section-frame -->
   </div> <!-- /white-shadowed-section-frame-outter -->
-<script src="./js/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="./js/script.js"></script>
+
 </body>
 </html>

@@ -27,3 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+/* ---------------------------------------------------
+   Flatpickr
+--------------------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Date only
+  flatpickr(".js-date", {
+    dateFormat: "d M Y",
+    allowInput: true
+  });
+
+  // Date + Time
+  flatpickr(".js-datetime", {
+    enableTime: true,
+    dateFormat: "d M Y H:i",
+    time_24hr: true,
+    allowInput: true
+  });
+
+  // Time only
+  flatpickr(".js-time", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true,
+    allowInput: true
+  });
+
+});
