@@ -34,6 +34,7 @@ div {
   --brightOrange: #FF7A59;
 
   --radioRed: #E41325;
+  --radioBlue: #2563EB;
 
   --formPurpleBorder: #B8A7E6;
   --formPurpleSoft: #F1EEFB;
@@ -252,13 +253,13 @@ select:focus {
 
 /* field container error state */
 .field-container.has-error input{
-  border-color: var(--radioRed);
+  border-color: var(--radioBlue);
 }
 
 /* override hover/focus so error stays dominant */
 .field-container.has-error input:hover,
 .field-container.has-error input:focus{
-  border-color: var(--radioRed);
+  border-color: var(--radioBlue);
   box-shadow: 0 0 0 3px rgba(228, 19, 37, 0.18);
 }
 
@@ -267,20 +268,20 @@ select:focus {
   margin-top: 6px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--radioRed);
+  color: var(--radioBlue);
 }
 
 /* error button state */
 .btn-pill--error{
-  background: var(--radioRed);
-  border-color: var(--radioRed);
+  background: var(--radioBlue);
+  border-color: var(--radioBlue);
 }
 
 .btn-pill--error:hover{
   filter: brightness(0.96);
 }
 .field-required{
-  color: var(--radioRed); /* matches error state */
+  color: var(--radioBlue); /* matches error state */
   margin-right: 4px;
   font-weight: 700;
 }
@@ -826,7 +827,7 @@ select:focus {
 }
 
 .radio-pill:has(input:checked) {
-  border: 1px solid var(--radioRed);
+  border: 1px solid var(--radioBlue);
 }
 
 .radio-pill:hover {
@@ -871,7 +872,7 @@ select:focus {
 /* CHECKED state */
 .radio-pill:has(input:checked) .pill-dot {
   background: #ffffff;        /* white base */
-  border-color: var(--radioRed);      /* red border */
+  border-color: var(--radioBlue);      /* red border */
 }
 
 /* big red inner dot */
@@ -880,7 +881,7 @@ select:focus {
   position: absolute;
   inset: 2px;                 /* controls dot size */
   border-radius: 50%;
-  background: var(--radioRed);        /* red dot */
+  background: var(--radioBlue);        /* red dot */
 }
 
 
@@ -989,12 +990,12 @@ select:focus {
 
 /* checked state */
 .check-row__input:checked + .check-row__box{
-  border-color: var(--radioRed);
+  border-color: var(--radioBlue);
 }
 
 .check-row__input:checked + .check-row__box::after{
-  border-left-color: var(--radioRed);
-  border-bottom-color: var(--radioRed);
+  border-left-color: var(--radioBlue);
+  border-bottom-color: var(--radioBlue);
 }
 
 /* keyboard focus */
@@ -1140,6 +1141,10 @@ select:focus {
   visibility: hidden;
   margin-bottom: 6px;
 }
+
+
+
+
 
 /********** 13. DATE STYLE END **********/
 
