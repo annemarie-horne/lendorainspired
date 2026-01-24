@@ -18,6 +18,24 @@
   <div class="white-shadowed-section-frame-outter">
 
 
+    
+   
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
     <!-- ****** FORM CONTROLS START ****** -->
     <div class="comment-controls" role="group" aria-label="Comment controls">
       <button type="button" class="comment-control" data-comments-action="expand">
@@ -84,7 +102,7 @@
         </div>
 
         <br/>
-        <button type="submit" class="btn-pill">
+        <button type="button" class="btn-pill">
           Submit Application
         </button>
 
@@ -109,32 +127,32 @@
         <div class="form-grid">
 
           <div class="field-container has-error">
-            <label for="firstName"><span class="field-required">*</span>First Name</label>
-            <input type="text" id="firstName" placeholder="Provide full first name" />
+            <label for="firstName2"><span class="field-required-error">*</span>First Name</label>
+            <input type="text" id="firstName2" placeholder="Provide full first name" />
             <div class="field-error">First name is required.</div>
           </div>
 
           <div class="field-container has-error">
-            <label for="lastName"><span class="field-required">*</span>Last Name</label>
-            <input type="text" id="lastName" placeholder="Provide last name" />
+            <label for="lastName2"><span class="field-required-error">*</span>Last Name</label>
+            <input type="text" id="lastName2" placeholder="Provide last name" />
             <div class="field-error">Last name is required.</div>
           </div>
 
           <div class="field-container has-error">
-            <label for="eMail"><span class="field-required">*</span>Email</label>
-            <input type="email" id="eMail" placeholder="Work email" />
+            <label for="eMail2"><span class="field-required-error">*</span>Email</label>
+            <input type="email" id="eMail2" placeholder="Work email" />
             <div class="field-error">Please enter a valid email address.</div>
           </div>
 
           <div class="field-container has-error">
-            <label for="cellPhone"><span class="field-required">*</span>Cell Phone</label>
-            <input type="text" id="cellPhone" placeholder="Work phone" />
+            <label for="cellPhone2"><span class="field-required-error">*</span>Cell Phone</label>
+            <input type="text" id="cellPhone2" placeholder="Work phone" />
             <div class="field-error">Cell phone number is required.</div>
           </div>
 
           <div class="field-container full has-error">
-            <label for="street"><span class="field-required">*</span>Address</label>
-            <input type="text" id="street" placeholder="Work address" />
+            <label for="street2"><span class="field-required-error">*</span>Address</label>
+            <input type="text" id="street2" placeholder="Work address" />
             <div class="field-error">Address is required.</div>
           </div>
 
@@ -149,7 +167,48 @@
       <!-- ****** COMMENTS SECTION START ****** -->
       <div class="white-shadowed-section-frame">
         <div class="section-title">
-          Comments (Notes)
+          Comments (ABOVE)
+        </div>
+        <div class="section-description">
+          Demonstrating expandable comments on fields.
+        </div>
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">1.</div>
+            <div class="question-text">Daily Report.</div>
+          </div>
+
+          <div class="question-body">
+
+            <details class="expand-note subtle">
+              <summary class="expand-note__summary">
+                Report Format
+              </summary>
+
+              <div class="expand-note__content">
+                <p>1. Inbox Start, End</p>
+                <p>2. Situations and Handing</p>
+                <p>3. Improvements Implemented.</p>
+                <p>4. Studied</p>
+                <p>5. Wins</p>
+              </div>
+            </details>
+
+            <div class="field-with-attach">
+              <textarea rows="6"></textarea>
+            </div>
+
+          </div>
+        </div>        
+      </div>
+
+
+
+      <div class="white-shadowed-section-frame">
+        <div class="section-title">
+          Comments (BELOW)
         </div>
         <div class="section-description">
           Demonstrating expandable comments on fields.
@@ -163,6 +222,10 @@
           </div>
 
           <div class="question-body">
+
+            <div class="field-with-attach">
+              <input class="control" type="text" placeholder="Please enter your answer">
+            </div>
 
             <details class="expand-note subtle">
               <summary class="expand-note__summary">
@@ -178,17 +241,8 @@
               </div>
             </details>
 
-            <div class="field-with-attach">
-              <input class="control" type="text" placeholder="TAKE NOTE OF THE VIEW INSTRUCTIONS JUST ABOVE THE TEXT INPUT">
-            </div>
-
           </div>
-        </div>
-
-
-
-
-        
+        </div>        
       </div>
       <!-- ****** COMMENTS SECTION END ****** -->
 
@@ -238,6 +292,69 @@
         </div>
       </div>
       <!-- ****** TEXT FIELD SECTION END ****** -->
+
+
+
+
+
+
+
+
+
+      <!-- ****** TEXT FIELD SECTION START ****** -->
+      <div class="white-shadowed-section-frame">
+        <div class="section-title">
+          Text Fields with (NEW UPLOAD FEATURE) xxxxx
+        </div>
+        <div class="section-description">
+          Demonstrating Text fields and variations.
+        </div>
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">1.</div>
+            <div class="question-text">Text Only.</div>
+          </div>
+
+          <div class="question-body">
+            <div class="field-with-attach">
+              <input class="control" type="text" placeholder="Please enter your answer">
+            </div>
+          </div>
+        </div>
+
+        <hr class="question-divider">
+       
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number">2.</div>
+            <div class="question-text">Text with Attachment.</div>
+          </div>
+
+          <div class="field-attach-row">
+            <input class="control" type="text" placeholder="Please enter your answer">
+          </div>
+
+          <div class="upload-block" data-upload>
+            <input type="file" id="docUpload1" class="upload-input js-upload" data-upload-id="docUpload1" multiple />
+
+            <div class="upload-row">
+              <label for="docUpload1" class="upload-btn" role="button" tabindex="0">
+                <span class="upload-btn__icon" aria-hidden="true">📎</span>
+                <span class="upload-btn__text">Upload Multiple Files</span>
+                <span class="upload-badge" data-upload-badge="docUpload1" aria-hidden="true">0</span>
+              </label>
+
+            </div>
+
+            <ul class="upload-list" data-upload-list="docUpload1" aria-label="Uploaded files"></ul>
+          </div>
+
+        </div>
+      </div>
+      <!-- ****** TEXT FIELD SECTION END ****** -->
+
 
 
 
