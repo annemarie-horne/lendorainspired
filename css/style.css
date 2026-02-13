@@ -618,7 +618,7 @@ select:focus {
 /* Sub questions */
 .sub-questions {
   display: none;
-  padding-left: 30px;
+  padding: 0 30px;
   border-left: 2px solid var(--formBlue);
   margin-left: 0px;
   background-color: var(--formLightBlue);
@@ -665,6 +665,18 @@ select:focus {
 
 .sub-question {
   padding: 18px 0;
+}
+
+.sub-question-error {
+  border: 2px solid var(--errorRed);
+  border-radius: 5px;
+}
+.sub-question-error-message {
+  font-size: 13px;
+  color: var(--errorRed);
+  padding: 5px 10px;
+  background-color: #FAD2D6;
+  font-weight: 400;
 }
 
 /* line 1: number + text in one row */
