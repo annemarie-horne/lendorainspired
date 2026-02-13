@@ -6,7 +6,7 @@
     
     <title>Lendora Inspired</title>
 
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/style.css?v2" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -21,14 +21,6 @@
     
    
     
-
-
-
-
-    
-
-
-
 
 
 
@@ -567,6 +559,243 @@
          
       </div>
       <!-- ****** RADIO BUTTON SECTION END ****** -->
+
+
+
+
+
+
+
+        <!-- ****** RADIO BUTTON SECTION START ****** -->
+      <div class="white-shadowed-section-frame">
+        <div class="section-title">
+          Radio Button Fields (with Errors)
+        </div>
+        <div class="section-description">
+          Demonstrating Radio Button fields and variations where a single field is mandatory but wasn't filled by a user and now shows an error.
+        </div>
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required">*</span> 1.</div>
+            <div class="question-text">Yes and No Only.</div>
+          </div>
+
+          <div class="question-body">
+            <div class="sub-controls question-error-border">
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill1" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-error">1. Yes and No Only. is required.</div>
+          </div>
+
+        </div>
+
+
+        <hr class="question-divider">
+
+        
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required">*</span> 2.</div>
+            <div class="question-text">Risk Yes and No Only. Some text next to the radio.</div>
+          </div>
+
+          <div class="question-body">
+            <div class="sub-controls question-error-border">
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill2" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill2" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+              </div>
+
+              <span class="radio-note">The selected choice is your final answer.</span>
+            </div>
+
+            <div class="field-error">2. Risk Yes and No Only. Some text next to the radio. is required.</div>
+          </div>
+
+        </div> 
+
+
+        <hr class="question-divider">
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required">*</span> 3. </div>
+            <div class="question-text">Yes, No and Maybe. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="sub-controls question-error-border">
+                  
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill3" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill3" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill3" value="maybe">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Maybe</span>
+                </label>
+              </div>
+
+              <div class="field-attach-row">
+                <input class="control" type="text" placeholder="Notes (Optional)">
+              </div>
+
+
+            </div>
+
+            <div class="field-error">3. Yes, No and Maybe. With Text. is required.</div>
+
+          </div>
+        </div> 
+
+
+        <hr class="question-divider">
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required">*</span> 4. </div>
+            <div class="question-text">Yes, No and Maybe. With Text. With Attachment.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="sub-controls question-error-border">
+                  
+              <div class="radio-pills">
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill4" value="yes">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Yes</span>
+                </label>
+
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill4" value="no">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="radiopill4" value="maybe">
+                  <span class="pill-dot" aria-hidden="true"></span>
+                  <span class="pill-text">Maybe</span>
+                </label>
+              </div>
+
+              <div class="field-attach-row">
+                <input class="control" type="text" placeholder="Notes (Optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+
+            </div>
+
+            <div class="field-error">4. Yes, No and Maybe. With Text. With Attachment. is required.</div>
+
+          </div>
+        </div> 
+
+        <hr class="question-divider">
+
+        
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required">*</span> 5. </div>
+            <div class="question-text">Radio Button Options Only.</div>
+          </div>
+
+          <div class="question-body">
+
+            
+            <div class="radio-pills radio-pills--stack question-error-border">
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval1">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 1</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval2">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 2 with extra text.</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval3">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 3 with more extra text over here.</span>
+              </label>
+
+              <label class="radio-pill">
+                <input type="radio" name="ownership" value="radioval4">
+                <span class="pill-dot" aria-hidden="true"></span>
+                <span class="pill-text">Option 4 extra super long text that can fill a long radio button here.</span>
+              </label>
+            </div>
+
+            <div class="field-error">5. Radio Button Options Only. is required.</div>
+
+          </div>
+        </div> 
+       
+         
+      </div>
+      <!-- ****** RADIO BUTTON SECTION END ****** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1372,6 +1601,214 @@
 
       </div>
       <!-- ****** CHECKBOX SECTION END ****** -->
+
+
+
+
+
+
+
+
+
+
+      <!-- ****** CHECKBOX SECTION START ****** -->
+      <div class="white-shadowed-section-frame">
+
+        <div class="section-title">
+          Checkbox Fields (with Errors)
+        </div>
+        <div class="section-description">
+          Demonstrating Checkbox fields and variations where the field is mandatory but wasn't filled by the user.
+        </div>
+        
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required-error">*</span> 1.&nbsp;</div>
+            <div class="question-text"> Checkbox with Text. Single.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full question-error-border">
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">I confirm the information above is correct.</span>
+              </label>
+            </div>
+
+            <div class="field-error">1. Checkbox with Text. Single. is required.</div>
+            
+          </div>
+
+        </div>
+        
+        
+        <hr class="question-divider">
+
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required-error">*</span> 2.&nbsp;</div>
+            <div class="question-text">Checkbox with Text. Multiple.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full question-error-border">
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 1.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 2 with extra text.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 3 with more extra text over here.</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" class="check-row__input">
+                <span class="check-row__box" aria-hidden="true"></span>
+                <span class="check-row__text">Option 4 extra super long text that can fill a long checkbox here.</span>
+              </label>
+            </div>
+
+            <div class="field-error">2. Checkbox with Text. Multiple. is required.</div>
+            
+          </div>
+
+        </div>
+        
+
+        <hr class="question-divider">
+
+        
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required-error">*</span> 3.&nbsp;</div>
+            <div class="question-text">3. Checkbox with Text. Multiple. With Text.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full question-error-border">
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 1.</span>
+                </label>
+                <input type="text" class="control" placeholder="Notes (Optional)">
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 2 with extra text.</span>
+                </label>
+                <input type="text" class="control" placeholder="Notes (Optional)">
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 3 with more extra text over here.</span>
+                </label>
+                <input type="text" class="control" placeholder="Notes (Optional)">
+              </div>
+
+            </div>
+
+
+            <div class="field-error">Checkbox with Text. Multiple. With Text. is required.</div>
+
+            
+          </div>
+
+        </div>
+        
+
+        <hr class="question-divider">
+
+
+        <div class="question-block">
+          <div class="question-header">
+            <div class="question-number"><span class="field-required-error">*</span> 4.&nbsp;</div>
+            <div class="question-text">Checkbox with Text. Multiple. With Text. With Upload.</div>
+          </div>
+
+          <div class="question-body">
+            
+            <div class="field-container full question-error-border">
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 1.</span>
+                </label>
+                <input type="text" class="control" placeholder="Notes (Optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 2 with extra text.</span>
+                </label>
+                <input type="text" class="control" placeholder="Notes (Optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+              <div class="check-input-row">
+                <label class="check-row">
+                  <input type="checkbox" class="check-row__input">
+                  <span class="check-row__box" aria-hidden="true"></span>
+                  <span class="check-row__text">Option 3 with more extra text over here.</span>
+                </label>
+                <input type="text" class="control" placeholder="Notes (Optional)">
+                <button type="button" class="attach-btn-outside" aria-label="Attach file">
+                  <span class="clip" aria-hidden="true">📎</span>
+                  <span class="attach-count">0</span>
+                </button>
+              </div>
+
+            </div>
+
+             <div class="field-error">4. Checkbox with Text. Multiple. With Text. With Upload. is required.</div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <!-- ****** CHECKBOX SECTION END ****** -->
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2421,6 +2858,145 @@
 
       </div>
       <!-- ****** NESTED SECTION END ****** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- ****** REPEATER QUESTION SECTION START ****** -->
+<div class="white-shadowed-section-frame">
+  <div class="section-title">
+    Repeater Question (Number → Repeated Mini-Forms)
+  </div>
+  <div class="section-description">
+    Demonstrating a repeater field where a number input determines how many mini-forms appear below.
+    (Static example: user entered 3)
+  </div>
+
+  <div class="question-block">
+    <div class="question-header">
+      <div class="question-number">1.</div>
+      <div class="question-text">How many shareholders does the company have?</div>
+    </div>
+
+    <div class="question-body">
+      <div class="field-with-attach">
+        <input class="control input--compact" type="number" value="3" placeholder="0">
+      </div>
+
+      <div class="repeater-wrap">
+        <div class="repeater-hint">
+          Below is the repeated section that appears after the number is entered.
+        </div>
+
+        <div class="repeater-list">
+
+          <!-- Item 1 -->
+          <div class="repeater-item">
+            <div class="repeater-item__head">
+              <div class="repeater-item__title">Shareholder 1</div>
+              
+            </div>
+
+            
+            <div class="repeater-grid">
+
+              <div class="field-container full">
+                <label for="shareholder1_name">Name</label>
+                <input type="text" id="shareholder1_name" placeholder="Enter name">
+              </div>
+
+              <div class="field-container full">
+                <label for="shareholder1_surname">Surname</label>
+                <input type="text" id="shareholder1_surname" placeholder="Enter surname">
+              </div>
+
+              <div class="field-container full">
+                <label for="shareholder1_email">Email</label>
+                <input type="email" id="shareholder1_email" placeholder="Enter email">
+              </div>
+
+            </div>
+
+            
+          </div>
+
+          <!-- Item 2 -->
+          <div class="repeater-item">
+            <div class="repeater-item__head">
+              <div class="repeater-item__title">Shareholder 2</div>
+              
+            </div>
+
+            <div class="repeater-grid">
+
+              <div class="field-container full">
+                <label for="shareholder1_name">Name</label>
+                <input type="text" id="shareholder1_name" placeholder="Enter name">
+              </div>
+
+              <div class="field-container full">
+                <label for="shareholder1_surname">Surname</label>
+                <input type="text" id="shareholder1_surname" placeholder="Enter surname">
+              </div>
+
+              <div class="field-container full">
+                <label for="shareholder1_email">Email</label>
+                <input type="email" id="shareholder1_email" placeholder="Enter email">
+              </div>
+
+            </div>
+
+            
+          </div>
+
+          <!-- Item 3 -->
+          <div class="repeater-item">
+            <div class="repeater-item__head">
+              <div class="repeater-item__title">Shareholder 3</div>
+              
+            </div>
+
+            <div class="repeater-grid">
+
+              <div class="field-container full">
+                <label for="shareholder1_name">Name</label>
+                <input type="text" id="shareholder1_name" placeholder="Enter name">
+              </div>
+
+              <div class="field-container full">
+                <label for="shareholder1_surname">Surname</label>
+                <input type="text" id="shareholder1_surname" placeholder="Enter surname">
+              </div>
+
+              <div class="field-container full">
+                <label for="shareholder1_email">Email</label>
+                <input type="email" id="shareholder1_email" placeholder="Enter email">
+              </div>
+
+            </div>
+
+          </div>
+
+        </div><!-- /repeater-list -->
+      </div><!-- /repeater-wrap -->
+    </div><!-- /question-body -->
+  </div><!-- /question-block -->
+
+</div>
+<!-- ****** REPEATER QUESTION SECTION END ****** -->
+
+
 
 
 

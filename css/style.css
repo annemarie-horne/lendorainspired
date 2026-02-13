@@ -15,6 +15,7 @@ INDEX
 13. DATE STYLE
 14. NUMBER STYLE
 15. Upload Button
+16. REPEATER QUESTION
 */
 
 div {
@@ -149,6 +150,18 @@ label {
   font-weight: 600;
   font-size: 13px;
   margin-bottom: 6px; /* ← breathing room */
+}
+label.check-row {
+  display: flex;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+label.radio-pill {
+  display: flex;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 0;
 }
 
 
@@ -671,6 +684,12 @@ select:focus {
   border: 2px solid var(--errorRed);
   border-radius: 5px;
 }
+.question-error-border {
+  border: 2px solid var(--errorRed);
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .sub-question-error-message {
   font-size: 13px;
   color: var(--errorRed);
@@ -731,7 +750,7 @@ select:focus {
   width: 100%;
 }
 
-/********** 8. SUB SECTION AND TOGGLE START **********/
+/********** 8. SUB SECTION AND TOGGLE END **********/
 
 
 /********** 9. DROPDOWN STYLE START **********/
@@ -912,6 +931,7 @@ select:focus {
   flex-direction: column;
   align-items: flex-start; /* pills size to content */
   gap: 10px;
+  width: 100%;
 }
 
 .radio-note{
@@ -954,7 +974,7 @@ select:focus {
   gap: 12px;
   min-height: 44px;         /* tap target */
   padding: 10px 0px;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   cursor: pointer;
   user-select: none;
   width: 100%;
@@ -1350,3 +1370,71 @@ select:focus {
 }
 
 /********** 15. UPLOAD BUTTON END **********/
+
+
+/********** 16. REPEATER QUESTION START **********/
+
+/********** REPEATER QUESTION DEMO START **********/
+
+.repeater-wrap{
+  margin-top: 14px;
+}
+
+.repeater-hint{
+  font-size: 13px;
+  color: #6B7280;
+  margin: 8px 0 12px;
+}
+
+/* list of repeated items */
+.repeater-list{
+  display: grid;
+  gap: 14px;
+}
+
+/* each repeated mini-form */
+.repeater-item{
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+/* small header strip */
+.repeater-item__head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.repeater-item__title{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.repeater-item__meta{
+  font-size: 12px;
+  color: #6B7280;
+}
+
+/* within each repeated item, make it 3 columns on wide screens */
+/* stacked layout inside repeater item */
+.repeater-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+
+/********** REPEATER QUESTION DEMO END **********/
+
+
+/********** 16. REPEATER QUESTION END **********/
