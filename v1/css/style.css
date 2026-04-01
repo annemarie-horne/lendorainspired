@@ -49,6 +49,15 @@ div {
   --formSlateBorder: #9AA7B8;   /* cool blue-grey */
   --formSlateSoft:   #F2F5F9;   /* airy slate background */
 
+  --formOrangeBorder: #E6B28A;
+  --formOrangeSoft: #FDF4EC;
+
+  --formYellowBorder: #E6D48A;
+  --formYellowSoft: #FDF9EC;
+
+  --formTealBorder: #8FC9C3;
+  --formTealSoft: #ECFAF8;
+
 }
 *,
 *::before,
