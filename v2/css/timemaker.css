@@ -1,0 +1,9 @@
+.pageHeaderLogoContainerr {
+    width: 100%;
+    height: 43px;
+    background: -webkit-linear-gradient(left, white, #068dcd);
+    background: -o-linear-gradient(right, white, #068dcd);
+    background: -moz-linear-gradient(right, white, #068dcd);
+    background: linear-gradient(to right, white, #068dcd);
+    border-bottom: solid 3px #068dcd;
+}

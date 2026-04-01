@@ -6,7 +6,8 @@
     
     <title>Lendora Inspired</title>
 
-  <link rel="stylesheet" href="./css/style.css?v2" />
+  <link rel="stylesheet" href="./css/timemaker.css?v1" />
+  <link rel="stylesheet" href="./css/style.css?v3" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -16,6 +17,56 @@
 </head>
 <body>
 
+<div class="pageHeaderLogoContainerr">
+  <div class="wrapper">
+    <img src="./images/logo.png" class="pageLogo" style="height:36px;float:left;padding:0;">
+    <div id="cktoolbarContainer" style="display:none;">
+      <div id="editorHider"></div>
+      <div id="calcTableShowButtonContainer"></div>
+      <div id="calcTableControlContainer"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="form-context-bar">
+  <div class="form-context-bar__group">
+    <div class="form-context-item">
+      <div class="form-context-item__label">FICA Number</div>
+      <div class="form-context-item__value">FICA-2026-00128</div>
+    </div>
+
+    <div class="form-context-item form-context-item--grow">
+      <label for="formViewType" class="form-context-item__label">View Type</label>
+      <div class="select-wrap select-wrap--context">
+        <select id="formViewType" class="control control--select control--context">
+          <option selected>All fields</option>
+          <option>Date fields only</option>
+          <option>DateTime fields only</option>
+          <option>Time fields only</option>
+          <option>Text fields only</option>
+          <option>Number fields only</option>
+          <option>Dropdown fields only</option>
+          <option>Checkbox fields only</option>
+          <option>Radio fields only</option>
+          <option>Fields with uploads only</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
 
 
 
@@ -24,16 +75,6 @@
 
 
   <div class="white-shadowed-section-frame-outter">
-
-
-    
-   
-    
-
-
-
-
-
 
 
     <!-- ****** FORM CONTROLS START ****** -->
