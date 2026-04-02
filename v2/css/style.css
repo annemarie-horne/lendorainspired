@@ -484,31 +484,6 @@ select:focus {
 /********** 5. STATS END **********/
 
 /********** 6. QUESTION COMMENTS BLOCK START **********/
-/* subtle expandable helper */
-
-.form-group {
-  margin-bottom: 24px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #222;
-}
-
-.form-group select,
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  min-height: 40px;
-  padding: 10px 12px;
-  border: 1px solid #cfcfcf;
-  border-radius: 6px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
 .field-comment {
   margin: 8px 0;
 }
@@ -567,7 +542,6 @@ select:focus {
 }
 
 .field-comment-content {
-  margin-top: 10px;
   padding: 12px 14px;
   border: 1px solid #ececec;
   border-radius: 8px;
@@ -575,6 +549,34 @@ select:focus {
   color: #444;
   font-size: 13px;
   line-height: 1.5;
+  margin-top: 10px;
+}
+
+.field-comment--inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.field-comment--inline > summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.field-comment--inline > .field-comment-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+  margin-top: 0;
+}
+
+.field-comment--inline:not([open]) > .field-comment-content {
+  display: none;
 }
 
 /********** 6. QUESTION COMMENTS BLOCK END **********/
