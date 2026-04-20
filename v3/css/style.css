@@ -1,0 +1,1608 @@
+/*
+INDEX
+1. MAIN AND GENERAL
+2. CONTAINERS AND SECTIONS
+3. FORMS AND ERRORS AND ERRORS
+4. FORM CONTROLS
+5. STATS
+6. QUESTION COMMENTS BLOCK
+7. NESTED SUB-SECTIONS
+8. SUB SECTION AND TOGGLE
+9. DROPDOWN STYLE
+10. RADIO BUTTON STYLE
+11. CHECKBOX STYLE
+12. BUTTON STYLE
+13. DATE STYLE
+14. NUMBER STYLE
+15. Upload Button
+16. REPEATER QUESTION
+17. FORM CONTROL
+18. QUESTION FILE UPLOADS
+*/
+
+div {
+  /* border: 1px solid green; */
+}
+
+/********** 1. MAIN AND GENERAL START **********/
+:root {
+  --pageBG: #F3F6FA;
+  --sectionBG: #ffffff;
+  
+
+  --canvasGray: #fafaf9;
+  --mainTextColor: #374151;
+  --mainFontFamily: "Inter", sans-serif;
+  --formGrey: #3b3b3b;
+  --formBlue: #99C8FF;
+  --formLightBlue: #E9F0FE;
+  --brightOrange: #FF7A59;
+
+  --errorRed: #E41325;
+  --radioBlue: #2563EB;
+
+  --formPurpleBorder: #B8A7E6;
+  --formPurpleSoft: #F1EEFB;
+
+  --formPinkBorder: #E6A7C6;
+  --formPinkSoft: #FDF1F7;
+
+  --formGreenBorder: #9ECFB5;   /* muted sage green */
+  --formGreenSoft:   #F1FAF6;   /* very light mint background */
+
+  --formSlateBorder: #9AA7B8;   /* cool blue-grey */
+  --formSlateSoft:   #F2F5F9;   /* airy slate background */
+
+  --formOrangeBorder: #E6B28A;
+  --formOrangeSoft: #FDF4EC;
+
+  --formYellowBorder: #E6D48A;
+  --formYellowSoft: #FDF9EC;
+
+  --formTealBorder: #8FC9C3;
+  --formTealSoft: #ECFAF8;
+
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Page */
+body {
+  background-color: var(--pageBG);
+  color: var(--mainTextColor);
+  font-family: var(--mainFontFamily);
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* modern browsers */
+::placeholder {
+  color: #9CA3AF; /* soft neutral grey */
+  opacity: 1;     /* prevents Safari from fading it */
+}
+
+/* Safari / older WebKit */
+::-webkit-input-placeholder {
+  color: #9CA3AF;
+}
+
+/* Firefox */
+::-moz-placeholder {
+  color: #9CA3AF;
+  opacity: 1;
+}
+
+input[type="number"]{
+  text-align: right;
+}
+
+/********** 1. MAIN AND GENERAL END **********/
+
+
+/********** 2. CONTAINERS AND SECTIONS START **********/
+.ui-notes {
+  padding-bottom: 30px;
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: 18px;
+  color: blue;
+}
+.white-shadowed-section-frame, .white-shadowed-section-frame-outter {
+  background-color: var(--sectionBG);
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow:
+      0 0 0 1px #f3f4f6,
+      0 10px 15px -3px rgba(0,0,0,.1),
+      0 4px 6px -4px rgba(0,0,0,.1);
+}
+.white-shadowed-section-frame-outter {
+  margin: 25px;
+}
+
+/* Sections */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  margin-bottom: 6px;
+}
+
+.section-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6B7280; /* soft gray */
+  margin-bottom: 20px;
+}
+/********** 2. CONTAINERS AND SECTIONS END **********/
+
+/********** 3. FORMS AND ERRORS START **********/
+/* Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 25px;
+}
+.field-container.full {
+  grid-column: span 2;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px; /* ← breathing room */
+}
+label.check-row {
+  display: flex;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+label.radio-pill {
+  display: flex;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
+    border: 1px solid #E5E7EB;
+    font-size: 14px;
+    padding: 9px;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+/* hover */
+input:not([type="checkbox"]):not([type="radio"]):hover,
+textarea:hover,
+select:hover {
+  border-color: var(--brightOrange);
+}
+/* focus (stronger than hover) */
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus,
+select:focus {
+  border-color: var(--brightOrange);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+}
+
+/* Questions */
+.question-block {
+  padding: 24px 0;
+}
+
+.question-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.question-number {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 18px;
+  color: var(--mainTextColor);
+}
+
+.question-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.question-body {
+  /* padding-left: 32px; */
+  /* aligns with text after number */
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.input--compact{
+  width: auto;
+  min-width: 140px;     /* enough for YYYY-MM-DD */
+  max-width: 180px;     /* prevents it getting silly */
+  padding: 12px 14px;
+}
+
+/* row layout */
+.date-text-row{
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+/* compact date */
+.input--compact{
+  flex: 0 0 auto;
+  min-width: 140px;     /* fits YYYY-MM-DD comfortably */
+  max-width: 180px;
+}
+
+/* text field fills remaining space */
+.date-text-row .control:not(.input--compact){
+  flex: 1 1 auto;
+  min-width: 0;         /* critical in flex layouts */
+}
+
+
+.question-divider {
+  border: none;
+  height: 1px;
+  background-color: #E5E7EB;
+}
+
+
+
+/* field container error state */
+.field-container.has-error input{
+  border-color: var(--errorRed);
+}
+
+/* override hover/focus so error stays dominant */
+.field-container.has-error input:hover,
+.field-container.has-error input:focus{
+  border-color: var(--radioBlue);
+  box-shadow: 0 0 0 3px rgba(228, 19, 37, 0.18);
+}
+
+/* error text under field */
+.field-error{
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--errorRed);
+}
+
+/* error button state */
+.btn-pill--error{
+  background: var(--radioBlue);
+  border-color: var(--radioBlue);
+}
+
+.btn-pill--error:hover{
+  filter: brightness(0.96);
+}
+.field-required{
+  color: var(--errorRed); /* matches error state */
+  margin-right: 4px;
+  font-weight: 700;
+}
+.field-required-error {
+  color: var(--errorRed); /* matches error state */
+  margin-right: 4px;
+  font-weight: 700;
+}
+
+/********** 3. FORMS AND ERRORS END **********/
+
+/********** 4. FORM CONTROLS START **********/
+/* top control bar */
+.comment-controls{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 18px;
+  flex-wrap: nowrap;      /* keep one row */
+}
+
+/* buttons */
+.comment-control{
+  flex: 0 0 auto;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.comment-control:hover{
+  border-color: var(--brightOrange);
+}
+
+.comment-control:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+  border-color: var(--brightOrange);
+}
+
+/* checkbox inside bar: keep it compact + not full-width */
+.comment-controls .check-row{
+  flex: 0 0 auto;
+  width: auto;            /* override your global .check-row{ width:100% } */
+  padding: 6px 10px;
+  min-height: 36px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* (optional) make hover a little lighter in the toolbar */
+.comment-controls .check-row:hover{
+  background: #F9FAFB;
+}
+
+/* right-side hint text */
+.comment-controls__meta{
+  margin-left: auto;
+  font-size: 13px;
+  color: #6B7280;
+  white-space: nowrap;
+}
+
+
+
+/********** 4. FORM CONTROLS END **********/
+
+/********** 5. STATS START **********/
+/* STATS GRID */
+.stats-grid{
+  margin-top: 10px;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* 4 columns: Date | Stat | Upload | Note */
+.stats-head,
+.stats-row{
+  display: grid;
+  grid-template-columns: 110px 100px 92px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+.stats-head{
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.stats-th{
+  font-size: 12px;
+  font-weight: 700;
+  color: #6B7280;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.stats-th--center{
+  text-align: center;
+}
+
+.stats-row{
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.stats-row:last-child{
+  border-bottom: 0;
+}
+/* stat label column (read-only, like date) */
+.stats-label{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  white-space: nowrap;
+
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.stats-date{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  white-space: nowrap;
+
+  /* makes it feel non-editable */
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+/* center the upload button cell */
+.stats-upload{
+  display: flex;
+  justify-content: center;
+}
+
+/* keep inputs nicely aligned in the grid */
+.stats-row .control{
+  width: 100%;
+}
+
+/* Optional: subtle row hover */
+.stats-row:hover{
+  background: #FCFCFD;
+}
+
+/* Responsive: stack into 2 rows on small screens */
+@media (max-width: 720px){
+  .stats-head{
+    display: none; /* hides header on mobile */
+  }
+
+  .stats-row{
+    grid-template-columns: 1fr 92px;
+    grid-template-areas:
+      "date upload"
+      "stat stat"
+      "note note";
+    gap: 10px;
+  }
+
+  .stats-row .stats-date{ grid-area: date; }
+  .stats-row .stats-upload{ grid-area: upload; }
+  .stats-row > div:nth-child(2){ grid-area: stat; } /* stat input cell */
+  .stats-row > div:nth-child(4){ grid-area: note; } /* note input cell */
+}
+
+/********** 5. STATS END **********/
+
+/********** 6. QUESTION COMMENTS BLOCK START **********/
+.field-comment {
+  margin: 8px 0;
+}
+
+.field-comment summary {
+  list-style: none;
+}
+
+.field-comment summary::-webkit-details-marker {
+  display: none;
+}
+
+.field-comment-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.comment-icon {
+  width: 30px;
+  height: 20px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-comment-toggle:hover .comment-icon {
+  background: #f8f8f8;
+  border-color: #bdbdbd;
+}
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-top: -2px;
+}
+
+.field-comment[open] .arrow {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.comment-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.field-comment-content {
+  padding: 12px 14px;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #444;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.field-comment--inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.field-comment--inline > summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.field-comment--inline > .field-comment-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+  margin-top: 0;
+}
+
+.field-comment--inline:not([open]) > .field-comment-content {
+  display: none;
+}
+
+/********** 6. QUESTION COMMENTS BLOCK END **********/
+
+
+/********** 7. NESTED SUB-SECTIONS START **********/
+
+/* Demo section: show nesting without click-to-expand */
+.white-shadowed-section-frame--demo-nesting .sub-questions{
+  display: block;
+}
+
+
+/********** 7. NESTED SUB-SECTIONS END **********/
+
+
+
+
+
+/********** 8. SUB SECTION AND TOGGLE START **********/
+/* Toggling */
+/* Toggle base */
+.toggle {
+  position: absolute;
+  opacity: 0;
+}
+
+.option-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+/* Input with attachment */
+.field-attach-row{
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+}
+
+.field-attach-row .control{
+  flex: 1 1 auto;
+  min-width: 0;   /* super important in flex layouts */
+}
+
+/* outside button (bigger tap target) */
+.attach-btn-outside{
+  height: 44px;             /* iPad friendly */
+  min-width: 64px;          /* comfy tap */
+  padding: 0 12px;
+
+  border: 1px solid #E5E7EB;
+  background: var(--canvasGray);
+  border-radius: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  flex: 0 0 auto;
+}
+
+.attach-btn-outside:hover{
+  border-color: var(--brightOrange);
+}
+
+
+.attach-btn-outside:active{
+  transform: translateY(1px);
+}
+
+.attach-count{
+  background: var(--formLightBlue);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+
+/* Sub questions */
+.sub-questions {
+  display: none;
+  padding: 0 30px;
+  border-left: 2px solid var(--formBlue);
+  margin-left: 0px;
+  background-color: var(--formLightBlue);
+  margin-top: 2px;
+}
+
+.sub-purple {
+  padding-left: 30px;
+  border-left: 2px solid var(--formPurpleBorder);
+  background-color: var(--formPurpleSoft);
+  margin-top: 2px;
+}
+
+
+.sub-pink {
+  padding-left: 30px;
+  border-left: 2px solid var(--formPinkBorder);
+  background-color: var(--formPinkSoft);
+  margin-top: 2px;
+}
+
+.sub-green {
+  padding-left: 30px;
+  border-left: 2px solid var(--formGreenBorder);
+  background-color: var(--formGreenSoft);
+  margin-top: 2px;
+}
+
+.sub-slate {
+  padding-left: 30px;
+  border-left: 2px solid var(--formSlateBorder);
+  background-color: var(--formSlateSoft);
+  margin-top: 2px;
+}
+
+
+.question-body.is-expanded .sub-questions {
+  display: block;
+}
+
+.sub-question {
+  padding: 18px 0;
+}
+
+.sub-question-error {
+  border: 2px solid var(--errorRed);
+  border-radius: 5px;
+}
+.question-error-border {
+  border: 2px solid var(--errorRed);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.sub-question-error-message {
+  font-size: 13px;
+  color: var(--errorRed);
+  padding: 5px 10px;
+  background-color: #FAD2D6;
+  font-weight: 400;
+}
+
+/* line 1: number + text in one row */
+.sub-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-number {
+  min-width: 30px;            /* gives consistent alignment: 2.1, 2.2, 2.3 */
+  font-weight: 600;
+  color: var(--mainTextColor);
+  font-size: 14px;
+}
+
+.sub-text {
+  font-weight: 600;
+  color: var(--mainTextColor);
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* line 2: radios + input on one row */
+.sub-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inline-options {
+  display: flex;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+/* input takes remaining width */
+.sub-controls .field-with-attach {
+  flex: 1;
+  position: relative;
+}
+
+/* Let inputs/rows inside sub-controls grow to fill remaining space */
+.sub-controls > .field-attach-row,
+.sub-controls > .field-with-attach,
+.sub-controls > .question-body,
+.sub-controls > .form-grid,
+.sub-controls > .date-text-row {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+/********** 8. SUB SECTION AND TOGGLE END **********/
+
+
+/********** 9. DROPDOWN STYLE START **********/
+
+/* Select wrapper gives us a consistent arrow */
+.select-wrap{
+  position: relative;
+  width: 100%;
+}
+
+/* Make select match your inputs */
+.control--select{
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  padding-right: 44px; /* space for arrow */
+  cursor: pointer;
+}
+
+/* Custom arrow */
+.select-wrap::after{
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #6B7280;
+  border-bottom: 2px solid #6B7280;
+  transform: translateY(-60%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* Hover/focus states: inherit your orange styling, but keep it consistent */
+.select-wrap:hover .control--select{
+  border-color: var(--brightOrange);
+}
+
+.control--select:focus{
+  border-color: var(--brightOrange);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+}
+
+/* Disabled placeholder option should look muted */
+.control--select option[disabled]{
+  color: #9CA3AF;
+}
+
+/* iPad tap target - ensure it feels chunky */
+.control--select{
+  min-height: 36px;
+}
+
+
+/* row layout: compact select + text field */
+.select-text-row{
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+/* select stays compact like number field */
+.select-wrap--compact{
+  flex: 0 0 auto;
+  min-width: 180px;  /* tweak if you want smaller */
+  max-width: 240px;
+}
+
+/* make sure the select fills its wrapper */
+.control--select-compact{
+  width: 100%;
+}
+
+/* text input fills remaining space */
+.select-text-row .control:not(.control--select){
+  flex: 1 1 auto;
+  min-width: 0; /* critical for flex layouts */
+}
+
+
+
+/********** 9. DROPDOWN STYLE END **********/
+
+
+/********** 10. RADIO BUTTON STYLE START **********/
+.radio-pills {
+  display: inline-flex;
+  gap: 12px;
+  align-items: flex-start; /* top align pills */
+}
+
+.radio-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: border-color 0.15s ease;
+}
+
+.radio-pill:has(input:checked) {
+  border: 1px solid var(--radioBlue);
+}
+
+.radio-pill:hover {
+  border-color: var(--brightOrange);
+}
+
+.radio-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill-text {
+  font-family: var(--mainFontFamily);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+
+
+/* base radio dot */
+.pill-dot {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #D1D5DB;   /* soft grey border */
+  background: #ffffff;        /* white base */
+  flex-shrink: 0;
+}
+
+/* inner dot (always present) */
+.pill-dot::after {
+  content: "";
+  position: absolute;
+  inset: 2px;                 /* same geometry as checked */
+  border-radius: 50%;
+  background: #D1D5DB;         /* washed-out grey dot */
+}
+
+/* CHECKED state */
+.radio-pill:has(input:checked) .pill-dot {
+  background: #ffffff;        /* white base */
+  border-color: var(--radioBlue);      /* red border */
+}
+
+/* big red inner dot */
+.radio-pill:has(input:checked) .pill-dot::after {
+  content: "";
+  position: absolute;
+  inset: 2px;                 /* controls dot size */
+  border-radius: 50%;
+  background: var(--radioBlue);        /* red dot */
+}
+
+
+
+/* accessibility focus */
+.radio-pill:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.35);
+}
+
+.radio-pills--stack {
+  flex-direction: column;
+  align-items: flex-start; /* pills size to content */
+  gap: 10px;
+  width: 100%;
+}
+
+.radio-note{
+  font-size: 14px;
+  color: var(--mainTextColor);
+  font-weight: 400;
+
+  /* makes it sit nicely next to the pills */
+  align-self: center;
+
+  /* lets it wrap instead of squashing everything */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sub-controls{
+  align-items: center;
+}
+
+.radio-note{
+  display: flex;
+  align-items: center;
+  height: 44px;            /* match radio-pill min-height */
+  line-height: 1.4;
+}
+.radio-note{
+  transform: translateY(-3px);
+}
+
+
+
+/********** 10. RADIO BUTTON STYLE START **********/
+
+
+/********** 11. CHECKBOX STYLE START **********/
+/* iPad-friendly checkbox row */
+.check-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;         /* tap target */
+  padding: 10px 0px;
+  /* border-radius: 12px; */
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+}
+
+
+/* checked = neutral grey */
+.check-row:has(.check-row__input:checked) {
+  background: #F9FAFB;
+}
+
+/* indeterminate should never inherit hover/selected background */
+.check-row:has(.check-row__input:indeterminate),
+.check-row:has(.check-row__input:indeterminate):hover {
+  background: transparent;
+}
+
+
+/* hide real checkbox but keep accessible */
+.check-row__input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* custom box */
+.check-row__box{
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid var(--formGrey);
+  flex-shrink: 0;
+  position: relative;
+
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+/* tick */
+.check-row__box::after{
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 8px;
+  left: 3px;
+  top: 6px;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transform: rotate(-50deg);
+  transition: border-color 0.15s ease;
+}
+
+/* checked state */
+.check-row__input:checked + .check-row__box{
+  border-color: var(--radioBlue);
+}
+
+.check-row__input:checked + .check-row__box::after{
+  border-left-color: var(--radioBlue);
+  border-bottom-color: var(--radioBlue);
+}
+
+/* keyboard focus */
+.check-row__input:focus-visible + .check-row__box{
+  outline: 3px solid rgba(16,185,129,0.25);
+  outline-offset: 2px;
+}
+
+.check-row__text{
+  font-size: 14px;
+  color: var(--mainTextColor);
+  font-weight: 400;
+}
+
+/* indeterminate state (orange with a dash) */
+.check-row__input:indeterminate + .check-row__box{
+  border-color: var(--brightOrange);
+  background: rgba(255, 122, 89, 0.14);
+}
+
+.check-row__input:indeterminate + .check-row__box::after{
+  /* turn the tick pseudo-element into a dash */
+  width: 16px;
+  height: 0;
+  left: 6px;
+  top: 12px;
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 3px solid var(--brightOrange);
+  transform: none;
+}
+
+/* allow sub-controls children to fill available width */
+.sub-controls {
+  align-items: flex-start; /* better for stacked checkboxes */
+}
+
+/* force the container to expand */
+.sub-controls .field-container.full {
+  flex: 1 1 100%;
+}
+
+
+
+
+.check-input-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.check-input-row .check-row {
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.check-input-row .control {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+
+/********** 11. CHECKBOX STYLE END **********/
+
+
+/********** 12. BUTTON STYLE START **********/
+.btn-pill{
+  display: inline-flex;        /* critical */
+  align-items: center;
+
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  border: 1px solid #FF7A59;
+  background: #FF7A59;
+  color: #ffffff;
+
+  font-family: var(--mainFontFamily);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-pill:hover{
+  filter: brightness(0.97);
+  box-shadow: 0 10px 18px -10px rgba(0,0,0,0.35);
+}
+
+.btn-pill:active{
+  transform: translateY(1px);
+  box-shadow: 0 6px 12px -10px rgba(0,0,0,0.35);
+}
+
+.btn-pill:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 122, 89, 0.28), 0 10px 18px -10px rgba(0,0,0,0.35);
+}
+
+.btn-pill:disabled{
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+/********** 12. BUTTON STYLE END **********/
+
+
+/********** 13. DATE STYLE START **********/
+.date-range {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.date-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* label styling consistent with rest of form */
+.date-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+/* let the text field take remaining width */
+.date-field--grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* hide label but keep layout alignment */
+.visually-hidden {
+  visibility: hidden;
+  margin-bottom: 6px;
+}
+
+
+
+
+
+/********** 13. DATE STYLE END **********/
+
+
+/********** 14. NUMBER STYLE START **********/
+.number-text-row {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+/* number stays compact */
+.number-text-row .input--compact {
+  flex: 0 0 auto;
+  min-width: 120px;
+  max-width: 160px;
+}
+
+/* text fills remaining space */
+.number-text-row .control:not(.input--compact) {
+  flex: 1 1 auto;
+  min-width: 0; /* critical for flex */
+}
+
+/********** 14. DATE STYLE END **********/
+
+/********** 15. UPLOAD BUTTON START **********/
+.upload-block{
+  margin-top: 8px;
+}
+
+.upload-row{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-input{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.upload-btn{
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 12px;
+
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+  user-select: none;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.upload-btn:hover{
+  border-color: var(--brightOrange);
+}
+
+.upload-btn:active{
+  transform: translateY(1px);
+}
+
+.upload-btn:focus-visible{
+  outline: none;
+  border-color: var(--brightOrange);
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+}
+
+/* file list under the button */
+.upload-list{
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: grid;
+  gap: 8px;
+  max-width: 520px; /* optional */
+}
+
+.upload-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 2px 2px 2px 8px;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.upload-item__name{
+  font-size: 12px;
+  color: var(--mainTextColor);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.upload-item__meta{
+  font-size: 12px;
+  color: #6B7280;
+  flex: 0 0 auto;
+}
+
+.upload-remove{
+  height: 32px;
+  min-width: 32px;
+  border-radius: 10px;
+
+  border: 1px solid #E5E7EB;
+  background: #F9FAFB;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  transition: border-color 0.15s ease, transform 0.12s ease;
+}
+
+.upload-remove:hover{
+  border-color: var(--brightOrange);
+}
+
+.upload-remove:active{
+  transform: translateY(1px);
+}
+
+.upload-remove:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+  border-color: var(--brightOrange);
+}
+.upload-btn{
+  position: relative; /* so badge can sit nicely */
+}
+
+/* iPhone-style badge */
+.upload-badge{
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+
+  border-radius: 999px;
+  background: var(--brightOrange);
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+
+  box-shadow: 0 6px 14px -8px rgba(0,0,0,0.35);
+}
+
+/* hide when zero */
+.upload-badge.is-hidden{
+  display: none;
+}
+
+/********** 15. UPLOAD BUTTON END **********/
+
+
+/********** 16. REPEATER QUESTION START **********/
+
+/********** REPEATER QUESTION DEMO START **********/
+
+.repeater-wrap{
+  margin-top: 14px;
+}
+
+.repeater-hint{
+  font-size: 13px;
+  color: #6B7280;
+  margin: 8px 0 12px;
+}
+
+/* list of repeated items */
+.repeater-list{
+  display: grid;
+  gap: 14px;
+}
+
+/* each repeated mini-form */
+.repeater-item{
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 9px;
+}
+
+/* small header strip */
+.repeater-item__head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.repeater-item__title{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.repeater-item__meta{
+  font-size: 12px;
+  color: #6B7280;
+}
+
+/* within each repeated item, make it 3 columns on wide screens */
+/* stacked layout inside repeater item */
+.repeater-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  padding: 14px;
+}
+
+
+/********** REPEATER QUESTION DEMO END **********/
+
+
+/********** 16. REPEATER QUESTION END **********/
+
+/********** 17. FORM CONTROL START **********/
+.form-context-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  flex-wrap: wrap;
+
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  padding: 20px 40px;
+}
+
+.form-context-bar__group{
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex: 1 1 620px;
+}
+
+.form-context-item{
+  min-width: 180px;
+}
+
+.form-context-item--grow{
+  flex: 1 1 280px;
+  min-width: 240px;
+  max-width: 360px;
+}
+
+.form-context-item__label{
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #6B7280;
+  margin-bottom: 6px;
+}
+
+.form-context-item__value{
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #F9FAFB;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+}
+
+.select-wrap--context{
+  min-width: 220px;
+}
+
+.control--context{
+  min-height: 40px;
+  background: #ffffff;
+}
+
+.context-action-btn{
+  height: 40px;
+  padding: 0 14px;
+
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  cursor: pointer;
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.context-action-btn:hover{
+  border-color: var(--brightOrange);
+}
+
+.context-action-btn:focus-visible{
+  outline: none;
+  border-color: var(--brightOrange);
+  box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25);
+}
+/********** 17. FORM CONTROL END **********/
+
+/********** 18. QUESTION FILE UPLOADS START **********/
+.question-attachments {
+  margin-bottom: 10px;
+}
+
+.comment-icon--attachment {
+  height: 24px;
+  min-width: 64px;
+  padding: 0 8px;
+  border-radius: 5px;
+  gap: 8px;
+}
+
+.attachment-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.attachment-mini-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6B7280;
+  line-height: 1;
+}
+
+.comment-icon--attachment .arrow {
+  width: 7px;
+  height: 7px;
+  margin-top: -1px;
+}
+
+.attachment-content a {
+  color: #374151;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.attachment-content a:hover {
+  text-decoration: underline;
+}
+/********** 18. QUESTION FILE UPLOADS END **********/

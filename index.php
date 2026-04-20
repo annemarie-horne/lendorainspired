@@ -1,3 +1,3 @@
 <?php
-header("Location: /lendorainspired/v2/");
+header("Location: ./v3/");
 exit;
