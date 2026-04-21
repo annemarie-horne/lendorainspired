@@ -18,6 +18,7 @@ INDEX
 16. REPEATER QUESTION
 17. FORM CONTROL
 18. QUESTION FILE UPLOADS
+19. ATTACHMENT SECTION
 */
 
 div {
@@ -1606,3 +1607,212 @@ select:focus {
   text-decoration: underline;
 }
 /********** 18. QUESTION FILE UPLOADS END **********/
+
+/********** 19. ATTACHMENT SECTION START **********/
+.meta-toggle {
+  margin: 10px 0;
+}
+
+.meta-toggle__summary {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.meta-toggle__summary::-webkit-details-marker {
+  display: none;
+}
+
+.meta-toggle__pill {
+  min-width: 54px;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.meta-toggle__summary:hover .meta-toggle__pill {
+  background: #f8f8f8;
+  border-color: #bdbdbd;
+}
+
+.meta-toggle__icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.meta-toggle__count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6B7280;
+  line-height: 1;
+}
+
+.meta-toggle__arrow {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-top: -1px;
+}
+
+.meta-toggle[open] .meta-toggle__arrow {
+  transform: rotate(-135deg);
+  margin-top: 1px;
+}
+
+.meta-toggle__panel {
+  margin-top: 10px;
+}
+
+.meta-toggle--inline {
+  display: block;
+  width: 100%;
+}
+
+.comment-box {
+  padding: 12px 14px;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.comment-box__text {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.comment-box__attachments {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.comment-box__attachments-title, .comment-box__title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6B7280;
+  margin-bottom: 8px;
+
+  letter-spacing: 0.2px;
+}
+.comment-box__attachments-title {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.file-list {
+  display: grid;
+  gap: 8px;
+}
+
+.file-item {
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.file-item__summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.file-item__summary::-webkit-details-marker {
+  display: none;
+}
+
+.file-item__name {
+  font-size: 13px;
+  color: #374151;
+  word-break: break-word;
+}
+
+.file-item__action {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.file-preview {
+  border-top: 1px solid #ececec;
+  background: #f9fafb;
+  padding: 16px;
+  min-height: 180px;
+  font-size: 13px;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-upload {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.answer-upload__top {
+  margin-bottom: 10px;
+}
+
+.answer-upload__list {
+  display: grid;
+  gap: 8px;
+}
+/* INLINE COMMENT LAYOUT */
+.meta-toggle--comment-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* left side (arrow + label) */
+.meta-toggle--comment-inline > .meta-toggle__summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  cursor: pointer;
+  list-style: none;
+}
+
+.meta-toggle--comment-inline > .meta-toggle__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* right side (the grey box) */
+.meta-toggle--comment-inline > .meta-toggle__panel {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-top: 0;
+}
+
+/* hide when closed */
+.meta-toggle--comment-inline:not([open]) > .meta-toggle__panel {
+  display: none;
+}
+
+
+/********** 19. ATTACHMENT SECTION END **********/
