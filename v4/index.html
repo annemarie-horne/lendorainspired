@@ -7,7 +7,7 @@
     <title>Lendora Inspired</title>
 
   <link rel="stylesheet" href="./css/timemaker.css?v1" />
-  <link rel="stylesheet" href="./css/style.css?v3" />
+  <link rel="stylesheet" href="./css/style.css?v4" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -764,7 +764,27 @@
                 <details class="file-item">
                   <summary class="file-item__summary">
                     <span class="file-item__name">MyAnswerDocument.pdf</span>
-                    <span class="file-item__action">View</span>
+                    <span class="file-item__actions">
+
+                      <!-- TOGGLE -->
+                      <span class="file-item__toggle" aria-hidden="true"></span>
+
+                      <!-- VIEW -->
+                      <button type="button" class="file-action-btn" title="Preview" aria-label="Preview file" data-modal-preview data-file-title="MyAnswerDocument.pdf" data-file-description="User uploaded file" data-file-preview-content="User uploaded PDF preview area" >
+                        <img src="https://acreation.co.za/lendorainspired/Icons/preview.svg" class="file-action-btn__img">
+                      </button>
+
+                      <!-- DOWNLOAD -->
+                      <button type="button" class="file-action-btn" title="Download" aria-label="Download file" >
+                        <img src="https://acreation.co.za/lendorainspired/Icons/download.svg" class="file-action-btn__img">
+                      </button>
+
+                      <!-- DELETE -->
+                      <button type="button" class="file-action-btn file-action-btn--danger" title="Remove file" aria-label="Remove file" data-upload-remove >
+                        <img src="https://acreation.co.za/lendorainspired/Icons/close.svg" class="file-action-btn__img">
+                      </button>
+                    </span>
+                    
                   </summary>
                   <div class="file-preview">
                     User uploaded PDF preview area
@@ -774,7 +794,29 @@
                 <details class="file-item">
                   <summary class="file-item__summary">
                     <span class="file-item__name">ReferenceScreenshot.png</span>
-                    <span class="file-item__action">View</span>
+                    
+                    <span class="file-item__actions">
+
+                      <!-- TOGGLE -->
+                      <span class="file-item__toggle" aria-hidden="true"></span>
+
+                      <!-- VIEW -->
+                      <button type="button" class="file-action-btn" title="Preview" aria-label="Preview file" data-modal-preview data-file-title="ReferenceScreenshot.png" data-file-description="User uploaded file" data-file-preview-content="User uploaded PDF preview area" >
+                        <img src="https://acreation.co.za/lendorainspired/Icons/preview.svg" class="file-action-btn__img">
+                      </button>
+
+                      <!-- DOWNLOAD -->
+                      <button type="button" class="file-action-btn" title="Download" aria-label="Download file" >
+                        <img src="https://acreation.co.za/lendorainspired/Icons/download.svg" class="file-action-btn__img">
+                      </button>
+
+                      <!-- DELETE -->
+                      <button type="button" class="file-action-btn file-action-btn--danger" title="Remove file" aria-label="Remove file" data-upload-remove >
+                        <img src="https://acreation.co.za/lendorainspired/Icons/close.svg" class="file-action-btn__img">
+                      </button>
+
+                    </span>
+
                   </summary>
                   <div class="file-preview">
                     Image preview area
@@ -782,6 +824,7 @@
                 </details>
               </div>
             </div>
+            
 
           </div>
         </div>

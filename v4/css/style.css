@@ -2300,3 +2300,31 @@ select:focus {
   color: #444;
   line-height: 1.5;
 }
+
+.file-item__toggle {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E5E7EB;
+  border-radius: 5px;
+  background: #F9FAFB;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.file-item__toggle::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #6B7280;
+  border-bottom: 2px solid #6B7280;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  transition: transform 0.2s ease, margin-top 0.2s ease;
+}
+
+.file-item[open] .file-item__toggle::before {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
